@@ -1,0 +1,18 @@
+# Copy this file to gradle.properties, then fill in the values below.
+# The real gradle.properties is intentionally ignored and must not be committed.
+
+android.overridePathCheck=false
+android.useAndroidX=true
+android.suppressUnsupportedCompileSdk=36
+org.gradle.jvmargs=-Xmx2048m
+SKIP_RELEASE_CONFIG_VALIDATION=false
+
+# Optional: configure the JDK in ~/.gradle/gradle.properties instead.
+# org.gradle.java.home=C:/path/to/jdk17
+
+# Google Sign-In / Firebase configuration
+GOOGLE_WEB_CLIENT_ID=YOUR_GOOGLE_WEB_CLIENT_ID
+BACKEND_VERIFY_URL=https://YOUR_BACKEND_HOST
+FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY
+FIREBASE_APPLICATION_ID=YOUR_FIREBASE_APPLICATION_ID
+FIREBASE_PROJECT_ID=YOUR_FIREBASE_PROJECT_ID

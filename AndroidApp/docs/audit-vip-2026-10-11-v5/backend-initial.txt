@@ -1,0 +1,210 @@
+[RTDN] Failed to query renewed subscription from Play: Error: Injected Play outage
+    at Object.get (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:17:70)
+    at Layer.handle (F:\AI\T-Emulator\AndroidApp\backend\app.js:733:99)
+    at async call (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-fixture.cjs:15:5)
+    at async TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:19:17)
+    at async Test.run (node:internal/test_runner/test:1208:7)
+    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+C01 { status: 200, data: 'OK' } { status: 200, data: 'OK (duplicate)' } { status: 200, data: { isVip: false } }
+C02 {
+  status: 200,
+  data: {
+    isVip: true,
+    verifiedAt: null,
+    source: 'google_play',
+    expiryTimeMillis: 1791773726767
+  }
+}
+C03 {
+  status: 200,
+  data: {
+    isVip: true,
+    verifiedAt: null,
+    source: 'google_play',
+    expiryTimeMillis: 1791773726769
+  }
+}
+C04 {
+  status: 200,
+  data: {
+    isVip: true,
+    verifiedAt: null,
+    source: 'google_play',
+    expiryTimeMillis: 1791773726770
+  }
+}
+C05 { status: 200, data: { isVip: false } }
+C06 {
+  status: 200,
+  data: {
+    isVip: true,
+    verifiedAt: null,
+    source: 'google_play',
+    expiryTimeMillis: null
+  }
+}
+C07 { status: 200, data: { entitled: true, status: 'GRANTED' } } {
+  isVipActive: true,
+  isLifetime: true,
+  productId: 'vip_lifetime',
+  orderId: 'GPA.INFLIGHT',
+  activeTokenHash: 'b89e1e03d77a44f724cfbcddaec0046b04c61deaaed81ab6b8dc06ed7dc1f113',
+  expiryTimeMillis: null,
+  source: 'google_play',
+  recomputedAt: 1791687326773
+}
+C08 { status: 500, data: { error: 'Purchase verification failed' } } {
+  status: 200,
+  data: { entitled: false, status: 'ENTITLEMENT_INACTIVE' }
+}
+✖ C01: failed RTDN Play query must remain retryable, not COMPLETED (14.0002ms)
+✖ C02: a renewal hint with current ON_HOLD state must not grant VIP (2.3772ms)
+✖ C03: RTDN subscription for an unrelated product must not grant VIP (0.8399ms)
+✖ C04: PAUSED notification must apply current Play state (0.7445ms)
+✖ C05: delayed EXPIRED hint must not void a currently renewed ACTIVE subscription (0.9231ms)
+✖ C06: legacy yearly entitlement without expiry must not be treated as lifetime (0.4602ms)
+✖ C07: delete account while Play verify is in flight must prevent a new purchase commit (1.4676ms)
+✖ C08: purchase commit followed by entitlement-write failure must recover on retry (0.7686ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 0
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 27.4835
+
+✖ failing tests:
+
+test at AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:15:1
+✖ C01: failed RTDN Play query must remain retryable, not COMPLETED (14.0002ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(first.status >= 500)
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:24:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:26:1
+✖ C02: a renewal hint with current ON_HOLD state must not grant VIP (2.3772ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:29:99)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:31:1
+✖ C03: RTDN subscription for an unrelated product must not grant VIP (0.8399ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:34:99)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:36:1
+✖ C04: PAUSED notification must apply current Play state (0.7445ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:39:99)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:41:1
+✖ C05: delayed EXPIRED hint must not void a currently renewed ACTIVE subscription (0.9231ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:44:99)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:46:1
+✖ C06: legacy yearly entitlement without expiry must not be treated as lifetime (0.4602ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:48:99)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:50:1
+✖ C07: delete account while Play verify is in flight must prevent a new purchase commit (1.4676ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to: true
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:57:62)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: true,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:59:1
+✖ C08: purchase commit followed by entitlement-write failure must recover on retry (0.7686ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:64:45)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

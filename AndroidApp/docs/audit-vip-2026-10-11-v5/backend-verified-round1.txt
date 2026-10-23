@@ -1,0 +1,58 @@
+[RTDN] Error processing notification: Error: Injected Play outage
+    at Object.get (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:17:70)
+    at Layer.handle (F:\AI\T-Emulator\AndroidApp\backend\app.js:770:87)
+    at async call (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-fixture.cjs:15:5)
+    at async TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:19:17)
+    at async Test.run (node:internal/test_runner/test:1208:7)
+    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+C01 { status: 500, data: 'Internal Error' } { status: 200, data: 'OK' } {
+  status: 200,
+  data: {
+    isVip: true,
+    verifiedAt: null,
+    source: 'google_play',
+    expiryTimeMillis: 1791775091160
+  }
+}
+C02 { status: 200, data: { isVip: false } }
+C03 { status: 200, data: { isVip: false } }
+C04 { status: 200, data: { isVip: false } }
+C05 {
+  status: 200,
+  data: {
+    isVip: true,
+    verifiedAt: null,
+    source: 'google_play',
+    expiryTimeMillis: 1791775091167
+  }
+}
+C06 { status: 200, data: { isVip: false } }
+C07 {
+  status: 403,
+  data: { error: 'Account has been deleted', entitled: false }
+} undefined
+C08 { status: 500, data: { error: 'Purchase verification failed' } } { status: 200, data: { entitled: true, status: 'ALREADY_VERIFIED' } }
+C09 { status: 200, data: { isVip: false } }
+C11 {
+  status: 403,
+  data: { error: 'Account has been deleted', entitled: false }
+} undefined
+✔ C01: failed RTDN Play query must remain retryable, not COMPLETED (7.5082ms)
+✔ C02: a renewal hint with current ON_HOLD state must not grant VIP (0.9534ms)
+✔ C03: RTDN subscription for an unrelated product must not grant VIP (0.8366ms)
+✔ C04: PAUSED notification must apply current Play state (0.7991ms)
+✔ C05: delayed EXPIRED hint must not void a currently renewed ACTIVE subscription (0.8629ms)
+✔ C06: legacy yearly entitlement without expiry must not be treated as lifetime (0.4593ms)
+✔ C07: delete account while Play verify is in flight must prevent a new purchase commit (1.4208ms)
+✔ C08: purchase commit followed by entitlement-write failure must recover on retry (0.8612ms)
+✔ C09: RTDN binding mismatch must not update another user entitlement (0.6782ms)
+✔ C10: renewal must not resurrect a purchase retained after account deletion (0.5935ms)
+✔ C11: deletion must block a new verify before destructive cleanup begins (0.5679ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 21.5569

@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="#161922"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/settings_title"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnCloseSettingsIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:gravity="center"
+            android:text="✕"
+            android:textColor="#B0BEC5"
+            android:textSize="18sp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Tab Navigation Buttons -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:paddingBottom="12dp">
+
+        <LinearLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/tabSaveLoad"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/tab_save_load"
+                android:textSize="11sp"
+                android:textColor="#90CAF9"
+                app:strokeColor="#90CAF9" />
+
+            <Button
+                android:id="@+id/tabVideo"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/tab_video"
+                android:textSize="11sp"
+                android:textColor="#CFD8DC"
+                app:strokeColor="#455A64" />
+
+            <Button
+                android:id="@+id/tabSpeed"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/tab_speed"
+                android:textSize="11sp"
+                android:textColor="#CFD8DC"
+                app:strokeColor="#455A64" />
+
+            <Button
+                android:id="@+id/tabAudio"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/tab_audio"
+                android:textSize="11sp"
+                android:textColor="#CFD8DC"
+                app:strokeColor="#455A64" />
+
+            <Button
+                android:id="@+id/tabSystem"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/tab_system"
+                android:textSize="11sp"
+                android:textColor="#CFD8DC"
+                app:strokeColor="#455A64" />
+
+            <Button
+                android:id="@+id/tabCheats"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="@string/tab_cheats"
+                android:textSize="11sp"
+                android:textColor="#CFD8DC"
+                app:strokeColor="#455A64" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#263238"
+        android:layout_marginBottom="12dp" />
+
+    <!-- TAB 1: SAVE & LOAD -->
+    <LinearLayout
+        android:id="@+id/panelSaveLoad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_save_slot"
+            android:textColor="#ECEFF1"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- 10 Slots Horizontal Scroll -->
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:id="@+id/slotContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <!-- Save & Load Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:id="@+id/btnSaveState"
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#1976D2"
+                android:text="@string/btn_save_state"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnLoadState"
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:layout_weight="1"
+                android:backgroundTint="#388E3C"
+                android:text="@string/btn_load_state"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Quick Save & Quick Load -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="14dp">
+
+            <Button
+                android:id="@+id/btnQuickSave"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="@string/btn_quick_save"
+                android:textSize="11sp"
+                android:textColor="#90CAF9"
+                app:strokeColor="#90CAF9" />
+
+            <Button
+                android:id="@+id/btnQuickLoad"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:text="@string/btn_quick_load"
+                android:textSize="11sp"
+                android:textColor="#A5D6A7"
+                app:strokeColor="#A5D6A7" />
+        </LinearLayout>
+
+        <!-- Reset Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSoftReset"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_soft_reset"
+                android:textColor="#FFA726"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnPowerCycle"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btn_power_cycle"
+                android:textColor="#EF5350"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- TAB 2: DISPLAY & SCALE -->
+    <LinearLayout
+        android:id="@+id/panelVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <!-- Aspect Ratio -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_aspect_ratio"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinnerAspectRatio"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#222836"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Scale Mode -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_scale_mode"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinnerScaleMode"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#222836"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Video Filter -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_video_filter"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinnerVideoFilter"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#222836"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Bilinear Filter Switch -->
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchBilinear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chk_bilinear"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Scanlines -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_scanlines"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinnerScanlines"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#222836"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Rotation -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_rotation"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinnerRotation"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#222836"
+            android:layout_marginBottom="10dp" />
+
+        <!-- Game Boy Palette -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_gb_palette"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinnerGbPalette"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#222836" />
+    </LinearLayout>
+
+    <!-- TAB 3: SPEED & EMULATION -->
+    <LinearLayout
+        android:id="@+id/panelSpeed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_emulation_speed"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinnerSpeed"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#222836"
+            android:layout_marginBottom="12dp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchTurbo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chk_turbo"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_region"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <Spinner
+            android:id="@+id/spinnerRegion"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:background="#222836" />
+    </LinearLayout>
+
+    <!-- TAB 4: AUDIO -->
+    <LinearLayout
+        android:id="@+id/panelAudio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchAudio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chk_audio"
+            android:textColor="#ECEFF1"
+            android:textSize="13sp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/tvVolumeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Master Volume: 100%"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderVolume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="0"
+            android:valueTo="100"
+            android:stepSize="5"
+            android:value="100"
+            app:thumbColor="#90CAF9"
+            app:trackColorActive="#90CAF9"
+            app:trackColorInactive="#37474F" />
+    </LinearLayout>
+
+    <!-- TAB 5: SYSTEM & CONTROLS -->
+    <LinearLayout
+        android:id="@+id/panelSystem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchHaptic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chk_haptic"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvOpacityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Virtual Pad Opacity: 100%"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="4dp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderOpacity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:valueFrom="20"
+            android:valueTo="100"
+            android:stepSize="10"
+            android:value="100"
+            app:thumbColor="#81C784"
+            app:trackColorActive="#81C784"
+            app:trackColorInactive="#37474F"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchRemoveSpriteLimit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chk_remove_sprite_limit"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchBlendFrames"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chk_blend_frames"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchGbaColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/chk_gba_color"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- TAB 6: CHEATS -->
+    <LinearLayout
+        android:id="@+id/panelCheats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_cheats_title"
+            android:textColor="#ECEFF1"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+
+            <EditText
+                android:id="@+id/etCheatCode"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:background="#222836"
+                android:hint="@string/hint_cheat_code"
+                android:textColorHint="#78909C"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:inputType="text"
+                android:importantForAutofill="no"
+                android:singleLine="true" />
+
+            <Button
+                android:id="@+id/btnAddCheat"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#1976D2"
+                android:text="@string/btn_add_cheat"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <TextView
+                android:id="@+id/tvCheatsCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no_cheats_yet"
+                android:textColor="#90CAF9"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnClearCheats"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_clear_cheats"
+                android:textColor="#EF5350"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <!-- Active cheats list -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="#1E2330"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/cheatsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+    </LinearLayout>
+
+    <!-- Bottom Action Button: Resume -->
+    <Button
+        android:id="@+id/btnCloseSettings"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#2E7D32"
+        android:text="@string/btn_close_settings"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

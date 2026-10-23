@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <vector android:width="150dp" android:height="150dp" android:viewportWidth="100" android:viewportHeight="100">
+            <!-- Cross shape -->
+            <path
+                android:fillColor="#C0888888"
+                android:strokeColor="#A0FFFFFF"
+                android:strokeWidth="1.5"
+                android:pathData="M33.3,0 L66.6,0 L66.6,33.3 L100,33.3 L100,66.6 L66.6,66.6 L66.6,100 L33.3,100 L33.3,66.6 L0,66.6 L0,33.3 L33.3,33.3 Z" />
+            <!-- Up arrow -->
+            <path android:fillColor="#50FFFFFF" android:pathData="M50,10 L60,25 L40,25 Z" />
+            <!-- Down arrow -->
+            <path android:fillColor="#50FFFFFF" android:pathData="M50,90 L40,75 L60,75 Z" />
+            <!-- Left arrow -->
+            <path android:fillColor="#50FFFFFF" android:pathData="M10,50 L25,40 L25,60 Z" />
+            <!-- Right arrow -->
+            <path android:fillColor="#50FFFFFF" android:pathData="M90,50 L75,60 L75,40 Z" />
+        </vector>
+    </item>
+    <item>
+        <vector android:width="150dp" android:height="150dp" android:viewportWidth="100" android:viewportHeight="100">
+            <!-- Cross shape -->
+            <path
+                android:fillColor="#80000000"
+                android:strokeColor="#80FFFFFF"
+                android:strokeWidth="1.5"
+                android:pathData="M33.3,0 L66.6,0 L66.6,33.3 L100,33.3 L100,66.6 L66.6,66.6 L66.6,100 L33.3,100 L33.3,66.6 L0,66.6 L0,33.3 L33.3,33.3 Z" />
+            <!-- Up arrow -->
+            <path android:fillColor="#50FFFFFF" android:pathData="M50,10 L60,25 L40,25 Z" />
+            <!-- Down arrow -->
+            <path android:fillColor="#50FFFFFF" android:pathData="M50,90 L40,75 L60,75 Z" />
+            <!-- Left arrow -->
+            <path android:fillColor="#50FFFFFF" android:pathData="M10,50 L25,40 L25,60 Z" />
+            <!-- Right arrow -->
+            <path android:fillColor="#50FFFFFF" android:pathData="M90,50 L75,60 L75,40 Z" />
+        </vector>
+    </item>
+</selector>

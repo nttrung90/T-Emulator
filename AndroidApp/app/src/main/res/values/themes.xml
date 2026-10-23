@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#90CAF9</item>
+        <item name="colorPrimaryVariant">#1976D2</item>
+        <item name="colorOnPrimary">#0A0A0E</item>
+        <item name="colorSecondary">#81C784</item>
+        <item name="android:windowBackground">#0A0A0E</item>
+    </style>
+
+    <style name="CustomSettingsDialogTheme" parent="Theme.MaterialComponents.DayNight.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowElevation">16dp</item>
+    </style>
+
+    <style name="SpinnerItemStyle" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:textColor">#ECEFF1</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+</resources>

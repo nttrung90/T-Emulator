@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">T-Emulator</string>
+
+    <!-- Main Screen -->
+    <string name="select_emulator">Chọn hệ máy</string>
+    <string name="select_emulator_desc">Chọn một hệ máy để nạp ROM và bắt đầu chơi</string>
+    <string name="language_settings">Ngôn ngữ</string>
+    <string name="select_language_title">Chọn ngôn ngữ</string>
+    <string name="lang_system">Mặc định hệ thống</string>
+    <string name="lang_vi">Tiếng Việt</string>
+    <string name="lang_en">English</string>
+
+    <!-- Bottom Navigation -->
+    <string name="tab_home">Trang chủ</string>
+    <string name="tab_games">Game</string>
+    <string name="tab_more">Thêm</string>
+
+    <!-- Games Tab -->
+    <string name="games_title">Game</string>
+    <string name="btn_select_folder">Chọn thư mục</string>
+    <string name="btn_rescan">Quét lại</string>
+    <string name="games_empty_state">Chưa có game nào.\nChọn game từ Trang chủ hoặc quét thư mục.</string>
+    <string name="games_empty_title">Chưa có game trong thư viện</string>
+    <string name="games_empty_desc">Chọn thư mục chứa ROM (.nes, .sfc, .gba...) để ứng dụng tự động quét và thêm vào danh sách.</string>
+    <string name="games_scan_folder">Thư mục: %s</string>
+    <string name="games_folder_not_selected">Chưa chọn thư mục</string>
+    <string name="games_count_format">%d game</string>
+    <string name="games_source_scan">Đã quét</string>
+    <string name="games_source_manual">Thêm thủ công</string>
+    <string name="games_scanning">Đang quét game…</string>
+    <string name="games_scanning_banner">Đang quét thư mục tìm game…</string>
+    <string name="games_found_count">Tìm thấy %d game</string>
+    <string name="games_delete_confirm">Xóa game này khỏi danh sách?</string>
+    <string name="action_delete">Xóa</string>
+
+    <!-- Games Tab Search & Cloud -->
+    <string name="games_search_hint">Tìm game đã quét hoặc đã thêm…</string>
+    <string name="games_search_count">%1$d / %2$d game</string>
+    <string name="games_search_no_results">Không tìm thấy game phù hợp</string>
+    <string name="games_search_no_results_desc">Không tìm thấy game nào khớp với từ khóa tìm kiếm. Thử tìm với từ khóa khác.</string>
+    <string name="games_btn_clear_search">Xóa tìm kiếm</string>
+    <string name="games_btn_select_rom_folder">Chọn thư mục ROM</string>
+    <string name="games_btn_restore_cloud">Khôi phục từ Cloud</string>
+    <string name="btn_backup_cloud">Google Drive · VIP</string>
+    <string name="btn_view_backups">Bản sao lưu</string>
+    <string name="games_options_title">Tùy chọn trò chơi</string>
+    <string name="action_backup_game">Sao lưu lên Google Drive</string>
+
+    <!-- Account & VIP -->
+    <string name="account_section_title">Tài khoản</string>
+    <string name="account_not_logged_in">Đăng nhập để đồng bộ quyền VIP và bản sao lưu đám mây</string>
+    <string name="account_logged_in_as">Đang đăng nhập: %s</string>
+    <string name="account_btn_login">Đăng nhập bằng Google</string>
+    <string name="account_btn_logout">Đăng xuất</string>
+    <string name="account_btn_delete">Xóa tài khoản ứng dụng</string>
+    <string name="account_vip_status_active">ĐÃ KÍCH HOẠT VIP 🌟</string>
+    <string name="account_vip_status_free">GÓI MIỄN PHÍ</string>
+    <string name="account_drive_section_title">Google Drive</string>
+    <string name="account_drive_status_connected">Đã kết nối: %s</string>
+    <string name="account_drive_status_disconnected">Chưa kết nối</string>
+    <string name="account_btn_connect_drive">Kết nối Google Drive</string>
+    <string name="account_btn_disconnect_drive">Ngắt kết nối Google Drive</string>
+    <string name="account_btn_restore_purchases">Khôi phục gói VIP</string>
+    <string name="account_drive_connected">Đã kết nối Google Drive</string>
+    <string name="error_login_required">Vui lòng đăng nhập Google trước</string>
+    <string name="error_drive_permission_required">Cần cấp quyền truy cập Google Drive</string>
+
+    <!-- VIP Paywall -->
+    <string name="vip_title">T-Emulator VIP</string>
+    <string name="vip_subtitle">Mở khóa sao lưu đám mây vĩnh viễn lên Google Drive của bạn</string>
+    <string name="vip_desc">Mở khóa VIP vĩnh viễn với tính năng sao lưu game lên Google Drive cá nhân, thanh toán 1 lần duy nhất</string>
+    <string name="vip_price_default">20.000 đ</string>
+    <string name="vip_btn_buy">Nâng cấp VIP (%s)</string>
+    <string name="vip_btn_restore">Khôi phục gói mua</string>
+    <string name="vip_feature_rom">Sao lưu an toàn tệp ROM gốc</string>
+    <string name="vip_feature_save">Bảo toàn pin lưu SRAM và các slot save state</string>
+    <string name="vip_feature_drive">Lưu trên chính tài khoản Google Drive của bạn</string>
+    <string name="vip_storage_notice">* Dung lượng lưu trữ sử dụng hạn mức Google Drive của bạn. Gói VIP không cấp thêm dung lượng Drive.</string>
+
+    <!-- Backup & Restore Dialogs -->
+    <string name="backup_dialog_title">Sao lưu %s</string>
+    <string name="backup_scope_title">Chọn thành phần cần sao lưu:</string>
+    <string name="backup_scope_all">Toàn bộ (ROM + Dữ liệu lưu + States)</string>
+    <string name="backup_scope_save_only">Chỉ dữ liệu lưu (SRAM &amp; State slots)</string>
+    <string name="backup_start_button">Bắt đầu sao lưu</string>
+    <string name="backup_uploading">Đang tải lên Google Drive (%d%%)…</string>
+    <string name="backup_success">Sao lưu hoàn tất thành công!</string>
+    <string name="backup_failed">Sao lưu thất bại: %s</string>
+    <string name="backups_dialog_title">Bản sao lưu Google Drive</string>
+    <string name="backups_empty">Không tìm thấy bản sao lưu nào trên Google Drive.</string>
+    <string name="restore_dialog_title">Khôi phục trò chơi</string>
+    <string name="restore_dialog_message">Khôi phục %s từ Google Drive?\nDữ liệu lưu cục bộ hiện tại có thể bị thay thế.</string>
+    <string name="restore_start_button">Khôi phục trò chơi</string>
+    <string name="restore_downloading">Đang tải về từ Google Drive (%d%%)…</string>
+    <string name="restore_success">Đã khôi phục trò chơi và dữ liệu lưu thành công!</string>
+    <string name="restore_failed">Khôi phục thất bại: %s</string>
+    <string name="delete_account_dialog_title">Xóa tài khoản ứng dụng</string>
+    <string name="delete_account_dialog_message">Bạn có chắc chắn muốn xóa phiên tài khoản ứng dụng và bộ nhớ đệm đám mây cục bộ? Game, dữ liệu lưu cục bộ và các tệp hiện có trên Google Drive của bạn sẽ không bị xóa.</string>
+
+    <!-- More Tab -->
+    <string name="more_title">Thêm</string>
+    <string name="more_language">Ngôn ngữ</string>
+    <string name="more_check_update">Kiểm tra cập nhật</string>
+    <string name="more_check_update_desc">Phiên bản hiện tại: %s</string>
+    <string name="more_about">Giới thiệu</string>
+    <string name="more_about_desc">Các ứng dụng của nhà phát triển và Chính sách quyền riêng tư</string>
+    <string name="more_about_url">https://nttapp.vercel.app</string>
+    <string name="about_dialog_title">Giới thiệu T-Emulator</string>
+    <string name="about_dialog_message">T-Emulator là trình giả lập game retro đa hệ máy.\n\nPhiên bản: %1$s\n\nCác ứng dụng của nhà phát triển và Chính sách quyền riêng tư:\n%2$s</string>
+    <string name="about_privacy_policy">Chính sách quyền riêng tư</string>
+
+    <!-- Console Names (Play Store Safe) -->
+    <string name="console_snes">Máy chơi game 16-Bit Super (.sfc)</string>
+    <string name="console_gb">Máy chơi game cầm tay cổ điển (.gb, .gbc)</string>
+    <string name="console_nes">Máy chơi game gia đình 8-Bit (.nes)</string>
+    <string name="console_pce">PC Engine / TurboGrafx-16 (.pce)</string>
+    <string name="console_sms">Master System, Game Gear, SG-1000 (.sms)</string>
+    <string name="console_gba">Máy chơi game cầm tay nâng cao (.gba)</string>
+    <string name="console_ws">WonderSwan / SwanCrystal (.ws)</string>
+
+    <!-- ROM Picker & File Handling -->
+    <string name="select_rom_title">Chọn tệp ROM</string>
+    <string name="error_load_rom">Không thể nạp tệp ROM. Vui lòng kiểm tra định dạng tệp.</string>
+    <string name="error_init_core">Lỗi khởi tạo nhân giả lập.</string>
+    <string name="loading_rom">Đang tải trò chơi…</string>
+
+    <!-- Emulator Controls & Menu -->
+    <string name="btn_menu">MENU</string>
+    <string name="btn_settings">Cài đặt</string>
+    <string name="menu_title">Menu Giả Lập</string>
+    <string name="menu_resume">Tiếp tục chơi</string>
+    <string name="menu_pip">Màn hình thu nhỏ (PiP)</string>
+    <string name="menu_restart">Khởi động lại trò chơi</string>
+    <string name="menu_exit">Thoát trò chơi</string>
+
+    <!-- Exit Confirmation Dialog -->
+    <string name="dialog_exit_title">Thoát giả lập</string>
+    <string name="dialog_exit_message">Bạn có muốn dừng chơi và quay về danh sách chọn hệ máy?</string>
+    <string name="action_exit">Thoát</string>
+    <string name="action_cancel">Hủy</string>
+
+    <!-- Settings Dialog Strings -->
+    <string name="settings_title">Cài đặt Giả Lập</string>
+    <string name="tab_save_load">Lưu / Tải</string>
+    <string name="tab_video">Hiển thị &amp; Scale</string>
+    <string name="tab_speed">Tốc độ</string>
+    <string name="tab_audio">Âm thanh</string>
+    <string name="tab_system">Hệ thống &amp; Phím</string>
+
+    <!-- Save & Load -->
+    <string name="lbl_save_slot">Chọn khe lưu (1 - 10):</string>
+    <string name="btn_save_state">Lưu trạng thái</string>
+    <string name="btn_load_state">Tải trạng thái</string>
+    <string name="btn_quick_save">Lưu nhanh (Khe 1)</string>
+    <string name="btn_quick_load">Tải nhanh (Khe 1)</string>
+    <string name="state_saved_success">Đã lưu trạng thái vào Khe %d</string>
+    <string name="state_saved_failed">Lưu trạng thái thất bại!</string>
+    <string name="state_loaded_success">Đã nạp trạng thái từ Khe %d</string>
+    <string name="state_loaded_failed">Không tìm thấy bản lưu hoặc lỗi nạp Khe %d!</string>
+    <string name="btn_soft_reset">Khởi động lại (Reset)</string>
+    <string name="btn_power_cycle">Tắt / Bật lại nguồn</string>
+    <string name="msg_reset_done">Đã khởi động lại trò chơi</string>
+
+    <!-- Display & Scale -->
+    <string name="lbl_aspect_ratio">Tỷ lệ khung hình:</string>
+    <string name="aspect_auto">Tự động (Khuyên dùng)</string>
+    <string name="aspect_4_3">Chuẩn 4:3 (TV Cổ điển)</string>
+    <string name="aspect_16_9">Màn rộng 16:9</string>
+    <string name="aspect_1_1">1:1 Không co giãn</string>
+    <string name="lbl_scale_mode">Chế độ co giãn (Scale):</string>
+    <string name="scale_fit">Vừa khít màn hình (Fit Center)</string>
+    <string name="scale_stretch">Kéo giãn đầy màn (Stretch Full)</string>
+    <string name="scale_center">Gốc 1x ở giữa (Center 1x)</string>
+    <string name="lbl_video_filter">Bộ lọc hình ảnh (Video Filter):</string>
+    <string name="filter_none">Không (Pixel sắc nét)</string>
+    <string name="filter_xbrz_2x">xBRZ 2x (Mịn nét cao)</string>
+    <string name="filter_xbrz_4x">xBRZ 4x (Siêu mịn)</string>
+    <string name="filter_hq2x">HQ 2x</string>
+    <string name="filter_scale2x">Scale 2x</string>
+    <string name="filter_prescale_2x">Prescale 2x</string>
+    <string name="filter_prescale_4x">Prescale 4x</string>
+    <string name="filter_ntsc">NTSC Blargg (Giả lập TV CRT)</string>
+    <string name="filter_lcd">LCD Grid (Lưới điểm ảnh cầm tay)</string>
+    <string name="chk_bilinear">Khử răng cưa (Làm mượt pixel)</string>
+    <string name="lbl_scanlines">Quét dòng cổ điển (Scanlines):</string>
+    <string name="lbl_rotation">Xoay màn hình:</string>
+    <string name="rot_0">0° (Bình thường)</string>
+    <string name="rot_90">90°</string>
+    <string name="rot_180">180°</string>
+    <string name="rot_270">270°</string>
+
+    <!-- Speed -->
+    <string name="lbl_emulation_speed">Tốc độ mô phỏng:</string>
+    <string name="chk_turbo">Chế độ tăng tốc nhanh (Turbo)</string>
+    <string name="lbl_region">Khu vực phân vùng:</string>
+    <string name="region_auto">Tự động</string>
+    <string name="region_ntsc">NTSC (Mỹ/Nhật 60 Hz)</string>
+    <string name="region_pal">PAL (Châu Âu 50 Hz)</string>
+
+    <!-- Audio -->
+    <string name="chk_audio">Bật âm thanh</string>
+    <string name="lbl_volume">Âm lượng: %d%%</string>
+
+    <!-- System & Controls -->
+    <string name="chk_haptic">Rung phản hồi khi chạm nút</string>
+    <string name="lbl_opacity">Độ mờ bàn phím ảo: %d%%</string>
+    <string name="chk_remove_sprite_limit">Bỏ giới hạn sprite (Giảm nhấp nháy)</string>
+    <string name="chk_blend_frames">Trộn khung hình LCD (Hiệu ứng bóng mờ Game Boy)</string>
+    <string name="chk_gba_color">Hiệu chỉnh màu sắc màn hình GBA</string>
+    <string name="lbl_gb_palette">Bảng màu Game Boy:</string>
+    <string name="gb_pal_default">Mặc định</string>
+    <string name="gb_pal_dmg">DMG Cổ điển (Xanh lá)</string>
+    <string name="gb_pal_pocket">Game Boy Pocket (Đen trắng)</string>
+    <string name="gb_pal_light">Game Boy Light (Xanh ngọc)</string>
+    <string name="btn_close_settings">Tiếp tục chơi</string>
+
+    <!-- Cheats & In-Game Controls -->
+    <string name="tab_cheats">Gian lận</string>
+    <string name="lbl_cheats_title">Mã gian lận (Game Genie / Action Replay):</string>
+    <string name="hint_cheat_code">Nhập mã (vd: GXXZKZVI)...</string>
+    <string name="btn_add_cheat">Thêm mã</string>
+    <string name="btn_clear_cheats">Xóa hết</string>
+    <string name="cheat_added_success">Đã nạp mã gian lận thành công!</string>
+    <string name="cheat_added_failed">Mã gian lận không hợp lệ!</string>
+    <string name="no_cheats_yet">Chưa có mã gian lận nào được nạp</string>
+    <string name="btn_rewind">⏪ Tua lại</string>
+    <string name="msg_screenshot_saved">Đã lưu ảnh màn hình vào thư mục Pictures/T-Emulator</string>
+    <string name="btn_screenshot">Chụp ảnh</string>
+    <string name="btn_pip">Màn hình thu nhỏ (PiP)</string>
+
+    <!-- Accessibility / Content Descriptions -->
+    <string name="desc_dpad">Phím điều hướng D-Pad</string>
+    <string name="desc_btn_l">Nút vai trái L</string>
+    <string name="desc_btn_r">Nút vai phải R</string>
+    <string name="desc_btn_a">Nút A</string>
+    <string name="desc_btn_b">Nút B</string>
+    <string name="desc_btn_x">Nút X</string>
+    <string name="desc_btn_y">Nút Y</string>
+    <string name="desc_btn_select">Nút Select</string>
+    <string name="desc_btn_start">Nút Start</string>
+    <string name="desc_btn_menu">Nút Menu</string>
+    <string name="desc_btn_settings">Nút Cài đặt</string>
+    <string name="desc_btn_turbo_a">Nút Turbo A</string>
+    <string name="desc_btn_turbo_b">Nút Turbo B</string>
+
+    <string name="privacy_policy_content">T-Emulator tôn trọng quyền riêng tư của bạn.\n\n• Chơi game ngoại tuyến: Hoàn toàn miễn phí, không yêu cầu tài khoản, tệp ROM, tiến trình lưu và cài đặt chỉ lưu trên thiết bị của bạn.\n• Đăng nhập Google &amp; Mua VIP (tùy chọn): Dùng để xác thực giao dịch qua máy chủ xác minh bảo mật và quản lý quyền VIP của bạn.\n• Sao lưu Google Drive (VIP): Tệp game và dữ liệu lưu được truyền trực tiếp đến Google Drive cá nhân của bạn (thư mục T-Emulator Backups). Nhà phát triển không thu thập, lưu trữ hay bán tệp game của bạn.\n• Quyền kiểm soát dữ liệu: Bạn có thể xóa phiên tài khoản ứng dụng và dữ liệu quyền bất kỳ lúc nào tại mục Thêm &gt; Xóa tài khoản ứng dụng.</string>
+    <string name="error_saving_screenshot">Không thể lưu ảnh màn hình</string>
+    <string name="btn_turbo_on">⚡ Turbo: BẬT</string>
+    <string name="btn_turbo_off">⏩ Turbo</string>
+
+    <!-- Emulator VIP & Sync Testing Tools -->
+    <string name="dev_tools_title">Công cụ Test VIP &amp; Giả lập Android</string>
+    <string name="dev_tools_badge">CHẾ ĐỘ GIẢ LẬP</string>
+    <string name="dev_tools_desc">Kiểm tra nhanh quyền VIP, đăng nhập Google giả lập và đồng bộ đám mây trực tiếp trên Android Emulator.</string>
+    <string name="dev_btn_toggle_vip">Bật / Tắt trạng thái VIP (1-Chạm)</string>
+    <string name="dev_btn_test_paywall">Test Giao diện Paywall &amp; Mua VIP</string>
+    <string name="dev_btn_test_login">Đăng nhập Tài khoản Test Giả lập</string>
+    <string name="dev_btn_toggle_drive">Bật / Tắt Mock Google Drive</string>
+    <string name="dev_btn_reset_test">Reset toàn bộ Dữ liệu Test</string>
+    <string name="dev_vip_activated">Đã kích hoạt chế độ VIP test 🌟</string>
+    <string name="dev_vip_revoked">Đã hủy VIP test (chuyển về gói Miễn phí)</string>
+    <string name="dev_login_success">Đã đăng nhập bằng tài khoản test giả lập</string>
+    <string name="dev_reset_complete">Đã xóa toàn bộ phiên test và dữ liệu VIP</string>
+    <string name="sim_dialog_title">Trình mô phỏng Google Play Billing</string>
+    <string name="sim_dialog_desc">Chọn phản hồi thanh toán mô phỏng để test luồng VIP trên giả lập:</string>
+    <string name="sim_btn_success">Mô phỏng Thanh toán Thành công (PURCHASED)</string>
+    <string name="sim_btn_pending">Mô phỏng Thanh toán Chờ xử lý (PENDING)</string>
+    <string name="sim_btn_canceled">Mô phỏng Người dùng Hủy bỏ (CANCEL)</string>
+    <string name="sim_btn_error">Mô phỏng Lỗi Thanh toán (ERROR)</string>
+    <string name="dialog_login_emulator_fallback_title">Đăng nhập Chế độ Giả lập</string>
+    <string name="dialog_login_emulator_fallback_msg">Google Play Services chưa sẵn sàng hoặc Web Client ID chưa cấu hình. Bạn có muốn đăng nhập bằng Tài khoản Test Giả lập không?</string>
+    <string name="dialog_btn_use_test_account">Dùng Tài khoản Test</string>
+    <string name="dialog_btn_retry_google">Thử lại Google Sign-in</string>
+</resources>

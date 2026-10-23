@@ -1,0 +1,21 @@
+PASS: P01 yearly cache must stop exactly at expiry even before TTL
+PASS: P02 yearly cache valid before expiry and TTL
+PASS: P03 lifetime cache must stop exactly at TTL
+PASS: P04 future verification timestamp must reject clock rollback
+PASS: P05 legacy yearly without expiry must fail closed
+PASS: P06 revoked record must override otherwise valid lifetime metadata
+PASS: P07 null cache and absent verification time must fail closed
+PASS: P08 yearly far future expiry must still obey cache TTL
+PASS: Q01 production tracker must reject an old A session after logout and A login
+PASS: Q02 stale guarded apply must not execute against the new user
+PASS: Q03 profile update for the same UID must preserve the request session
+PASS: Q04 session transition must not interleave with guarded state application
+PASS: Q05 explicit invalidation must advance generation even if already signed out
+PASS: P09 fresh authoritative refresh must start cache TTL now, not at an old receipt verification date
+PASS: P10 missing active metadata must never default to lifetime
+PASS: P11 legacy yearly expiry must stay bounded when product fields are absent
+PASS: P12 malformed expiry must deny rather than produce a grant
+PASS: P13 server inactive response must override lifetime metadata
+PASS: P14 only temporary server failures may permit HTTP cache fallback
+PASS: P15 transport classification must deny config errors and rethrow cancellation
+VIP policy/session/metadata audit: 0 failures / 20 probes

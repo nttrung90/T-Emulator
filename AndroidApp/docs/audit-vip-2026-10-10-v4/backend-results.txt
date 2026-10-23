@@ -1,0 +1,257 @@
+B01 { status: 200, data: 'OK' } VIP= false
+B04 { status: 200, data: { entitled: true, status: 'GRANTED' } }
+B05 { status: 200, data: { entitled: true, status: 'GRANTED' } } {
+  isVipActive: true,
+  orderId: 'GPA.SUB-1791641263825',
+  productId: 'vip_yearly',
+  activeTokenHash: '4120bfa7c22b6dad06bfc37d8a44e3c43ccbb4d8471810c416a3850171932295',
+  expiryTimeMillis: null,
+  source: 'google_play',
+  verifiedAt: 1791641263825
+}
+B06 { status: 200, data: { entitled: false, status: 'EXPIRED' } } Play queries= 0
+B07 { status: 200, data: { isVip: false } } Play queries= 0
+B08 {
+  status: 200,
+  data: {
+    isVip: true,
+    verifiedAt: null,
+    source: 'google_play',
+    expiryTimeMillis: 1791727663828
+  }
+}
+B09 {
+  status: 200,
+  data: {
+    isVip: true,
+    verifiedAt: 1791641263828,
+    source: 'google_play',
+    expiryTimeMillis: null
+  }
+}
+B10 { status: 200, data: { isVip: false } }
+B11 { status: 200, data: { isVip: false } }
+B12 { status: 200, data: { entitled: true, status: 'GRANTED' } } {
+  uid: 'user_A',
+  productId: 'vip_lifetime',
+  voided: false,
+  tokenHash: '15351aedb074d1db242c9a77d133805eec4fa410257d424de3321cd021ff5f64',
+  orderId: 'GPA.FAKE',
+  acknowledgementState: 1,
+  expiryTimeMillis: null,
+  verifiedAt: 1791641263831
+}
+✖ B01: changed messageId must still reject Firebase user token when OIDC verifier is absent (8.2291ms)
+✖ B02: production OIDC verifier must reject a different verified service account email (1.4414ms)
+✖ B03: production must fail closed when expected Pub/Sub audience is missing (1.1003ms)
+✖ B04: a subscription for another product must not grant vip_yearly (1.9586ms)
+✖ B05: yearly subscription without expiry must not become permanent VIP (0.6802ms)
+✖ B06: verify must requery a renewed token even if stored expiry has passed (0.5515ms)
+✖ B07: RTDN renewal must update yearly entitlement from Play (1.0041ms)
+✖ B08: RTDN on-hold must remove yearly access after Play recheck (0.7269ms)
+✖ B09: expired other purchase must not preserve a refunded lifetime entitlement (0.9203ms)
+✖ B10: an active lifetime purchase must preserve VIP when a yearly purchase expires (0.7252ms)
+✖ B11: a still-unexpired ID token must be rejected after account deletion (0.9245ms)
+✖ B12: a token voided between validation and commit must not be reactivated (1.2115ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 0
+ℹ fail 12
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 25.0902
+
+✖ failing tests:
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:47:1
+✖ B01: changed messageId must still reject Firebase user token when OIDC verifier is absent (8.2291ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok([401, 403, 503].includes(result.status))
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:54:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:57:1
+✖ B02: production OIDC verifier must reject a different verified service account email (1.4414ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:59:3)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: undefined,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:61:1
+✖ B03: production must fail closed when expected Pub/Sub audience is missing (1.1003ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:65:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:67:1
+✖ B04: a subscription for another product must not grant vip_yearly (1.9586ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to: true
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:71:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: true,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:73:1
+✖ B05: yearly subscription without expiry must not become permanent VIP (0.6802ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to: true
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:77:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: true,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:79:1
+✖ B06: verify must requery a renewed token even if stored expiry has passed (0.5515ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:84:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:87:1
+✖ B07: RTDN renewal must update yearly entitlement from Play (1.0041ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:94:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:96:1
+✖ B08: RTDN on-hold must remove yearly access after Play recheck (0.7269ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:102:38)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:104:1
+✖ B09: expired other purchase must not preserve a refunded lifetime entitlement (0.9203ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:111:38)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:113:1
+✖ B10: an active lifetime purchase must preserve VIP when a yearly purchase expires (0.7252ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:123:40)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:126:1
+✖ B11: a still-unexpired ID token must be rejected after account deletion (0.9245ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok([401, 403].includes(result.status))
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:135:38)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:137:1
+✖ B12: a token voided between validation and commit must not be reactivated (1.2115ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to: true
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-10-v4\backend-regressions.cjs:147:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:831:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: true,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }

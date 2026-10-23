@@ -1,0 +1,20 @@
+AndroidApp\docs\audit-vip-2026-10-10\AppDatabaseStub.kt:6:40: warning: parameter 'context' is never used
+    companion object { fun getInstance(context: Context): AppDatabase = error("No real Room in standalone audit") }
+                                       ^
+FAIL: N05 missing files manifest must be rejected: Accepted missing files[] and committed unchecked save
+FAIL: N06 mapped states must preserve slot numbers: Expected local_1/local_2; got [local.mss, remote_1.mss, remote_2.mss]
+FAIL: N07 conflicting remote ID must not overwrite a different local ROM: Different ROM overwrote existing game because manifest ID collided
+FAIL: N08 equal checksum with wrong console must not accept SAVE_ONLY: Accepted checksum match despite console mismatch
+V3 restore audit: 4 failures / 4 probes
+Exception in thread "main" java.lang.IllegalStateException: Remaining restore regressions reproduced
+	at audit.RestoreAuditKt$main$1.invokeSuspend(RestoreAudit.kt:94)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)
+	at audit.RestoreAuditKt.main(RestoreAudit.kt:42)
+	at audit.RestoreAuditKt.main(RestoreAudit.kt)

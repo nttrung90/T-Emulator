@@ -1,0 +1,7 @@
+
+C:\Users\nguye\.gradle\daemon\8.3\daemon-13860.out.log:138:e: file:///F:/AI/T-Emulator/AndroidApp/app/src/main/java/com/temulator/app/cloud/CloudBackupDialogHelper.kt:162:34 Unresolved reference: authRepo
+C:\Users\nguye\.gradle\daemon\8.3\daemon-13860.out.log:139:e: file:///F:/AI/T-Emulator/AndroidApp/app/src/main/java/com/temulator/app/cloud/CloudBackupDialogHelper.kt:191:29 Unresolved reference: Log
+C:\Users\nguye\.gradle\daemon\8.3\daemon-13860.out.log:140:e: file:///F:/AI/T-Emulator/AndroidApp/app/src/main/java/com/temulator/app/cloud/CloudBackupDialogHelper.kt:162:34 Unresolved reference: authRepo
+C:\Users\nguye\.gradle\daemon\8.3\daemon-13860.out.log:141:e: file:///F:/AI/T-Emulator/AndroidApp/app/src/main/java/com/temulator/app/cloud/CloudBackupDialogHelper.kt:191:29 Unresolved reference: Log
+C:\Users\nguye\.gradle\daemon\8.3\daemon-13860.out.log:173:BUILD FAILED in 5m 50s
+

@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">T-Emulator</string>
+
+    <!-- Main Screen -->
+    <string name="select_emulator">Select Console</string>
+    <string name="select_emulator_desc">Choose a console to load ROM and start playing</string>
+    <string name="language_settings">Language</string>
+    <string name="select_language_title">Select Language</string>
+    <string name="lang_system">System Default</string>
+    <string name="lang_vi">Tiếng Việt</string>
+    <string name="lang_en">English</string>
+
+    <!-- Bottom Navigation -->
+    <string name="tab_home">Home</string>
+    <string name="tab_games">Games</string>
+    <string name="tab_more">More</string>
+
+    <!-- Games Tab -->
+    <string name="games_title">Games</string>
+    <string name="btn_select_folder">Select Folder</string>
+    <string name="btn_rescan">Rescan</string>
+    <string name="games_empty_state">No games found yet.\nPick a game from Home or scan a folder.</string>
+    <string name="games_empty_title">No Games in Library</string>
+    <string name="games_empty_desc">Select a folder containing ROMs (.nes, .sfc, .gba...) to scan and add them automatically.</string>
+    <string name="games_scan_folder">Scan folder: %s</string>
+    <string name="games_folder_not_selected">No folder selected</string>
+    <string name="games_count_format">%d games</string>
+    <string name="games_source_scan">Scanned</string>
+    <string name="games_source_manual">Added manually</string>
+    <string name="games_scanning">Scanning for games…</string>
+    <string name="games_scanning_banner">Scanning folder for games…</string>
+    <string name="games_found_count">Found %d games</string>
+    <string name="games_delete_confirm">Remove this game from the list?</string>
+    <string name="action_delete">Remove</string>
+
+    <!-- Games Tab Search & Cloud -->
+    <string name="games_search_hint">Search scanned or added games…</string>
+    <string name="games_search_count">%1$d / %2$d games</string>
+    <string name="games_search_no_results">No matching games found</string>
+    <string name="games_search_no_results_desc">No games match your search query. Try another keyword.</string>
+    <string name="games_btn_clear_search">Clear Search</string>
+    <string name="games_btn_select_rom_folder">Select ROM Folder</string>
+    <string name="games_btn_restore_cloud">Restore from Cloud</string>
+    <string name="btn_backup_cloud">Google Drive · VIP</string>
+    <string name="btn_view_backups">Backups</string>
+    <string name="games_options_title">Game Options</string>
+    <string name="action_backup_game">Backup to Google Drive</string>
+
+    <!-- Account & VIP -->
+    <string name="account_section_title">Account</string>
+    <string name="account_not_logged_in">Sign in to sync your VIP benefits and cloud backups</string>
+    <string name="account_logged_in_as">Signed in as %s</string>
+    <string name="account_btn_login">Sign in with Google</string>
+    <string name="account_btn_logout">Sign out</string>
+    <string name="account_btn_delete">Delete App Account</string>
+    <string name="account_vip_status_active">VIP ACTIVE 🌟</string>
+    <string name="account_vip_status_free">FREE PLAN</string>
+    <string name="account_drive_section_title">Google Drive</string>
+    <string name="account_drive_status_connected">Connected: %s</string>
+    <string name="account_drive_status_disconnected">Not connected</string>
+    <string name="account_btn_connect_drive">Connect Google Drive</string>
+    <string name="account_btn_disconnect_drive">Disconnect Google Drive</string>
+    <string name="account_btn_restore_purchases">Restore VIP Purchases</string>
+    <string name="account_drive_connected">Google Drive connected</string>
+    <string name="error_login_required">Please sign in with Google first</string>
+    <string name="error_drive_permission_required">Google Drive permission required</string>
+
+    <!-- VIP Paywall -->
+    <string name="vip_title">T-Emulator VIP</string>
+    <string name="vip_subtitle">Unlock permanent Cloud Backup to your own Google Drive</string>
+    <string name="vip_desc">Unlocking permanent VIP enables cloud game backups to your personal Google Drive, one-time payment</string>
+    <string name="vip_price_default">20,000 VND</string>
+    <string name="vip_btn_buy">Upgrade to VIP (%s)</string>
+    <string name="vip_btn_restore">Restore Purchase</string>
+    <string name="vip_feature_rom">Backup original ROM files safely</string>
+    <string name="vip_feature_save">Preserve SRAM battery saves and state slots</string>
+    <string name="vip_feature_drive">Stored in your personal Google Drive account</string>
+    <string name="vip_storage_notice">* Cloud storage uses your own personal Google Drive quota. VIP does not include extra Drive storage.</string>
+
+    <!-- Backup & Restore Dialogs -->
+    <string name="backup_dialog_title">Backup %s</string>
+    <string name="backup_scope_title">Select components to backup:</string>
+    <string name="backup_scope_all">Full backup (ROM + Save data + States)</string>
+    <string name="backup_scope_save_only">Save data only (SRAM &amp; State slots)</string>
+    <string name="backup_start_button">Start Backup</string>
+    <string name="backup_uploading">Backing up to Google Drive (%d%%)…</string>
+    <string name="backup_success">Backup completed successfully!</string>
+    <string name="backup_failed">Backup failed: %s</string>
+    <string name="backups_dialog_title">Cloud Backups</string>
+    <string name="backups_empty">No cloud backups found on Google Drive.</string>
+    <string name="restore_dialog_title">Restore Game</string>
+    <string name="restore_dialog_message">Restore %s from Google Drive?\nExisting local save data may be replaced.</string>
+    <string name="restore_start_button">Restore Game</string>
+    <string name="restore_downloading">Restoring from Google Drive (%d%%)…</string>
+    <string name="restore_success">Game and save data restored successfully!</string>
+    <string name="restore_failed">Restore failed: %s</string>
+    <string name="delete_account_dialog_title">Delete App Account</string>
+    <string name="delete_account_dialog_message">Are you sure you want to delete your application account session and local cloud cache? Your local games, saves, and existing Google Drive files will not be deleted.</string>
+
+    <!-- More Tab -->
+    <string name="more_title">More</string>
+    <string name="more_language">Language</string>
+    <string name="more_check_update">Check for Updates</string>
+    <string name="more_check_update_desc">Current version: %s</string>
+    <string name="more_about">About</string>
+    <string name="more_about_desc">Developer apps &amp; Privacy Policy</string>
+    <string name="more_about_url">https://nttapp.vercel.app</string>
+    <string name="about_dialog_title">About T-Emulator</string>
+    <string name="about_dialog_message">T-Emulator is a multi-system retro game emulator.\n\nVersion: %1$s\n\nDeveloper apps &amp; Privacy Policy:\n%2$s</string>
+    <string name="about_privacy_policy">Privacy Policy</string>
+
+    <!-- Console Names (Play Store Safe) -->
+    <string name="console_snes">16-Bit Super Console (.sfc)</string>
+    <string name="console_gb">Classic Handheld (.gb, .gbc)</string>
+    <string name="console_nes">8-Bit Home Console (.nes)</string>
+    <string name="console_pce">PC Engine / TurboGrafx-16 (.pce)</string>
+    <string name="console_sms">Master System, Game Gear, SG-1000 (.sms)</string>
+    <string name="console_gba">Advanced Handheld (.gba)</string>
+    <string name="console_ws">WonderSwan / SwanCrystal (.ws)</string>
+
+    <!-- ROM Picker & File Handling -->
+    <string name="select_rom_title">Select ROM File</string>
+    <string name="error_load_rom">Failed to load ROM file. Please check file format.</string>
+    <string name="error_init_core">Failed to initialize emulator core.</string>
+    <string name="loading_rom">Loading game…</string>
+
+    <!-- Emulator Controls & Menu -->
+    <string name="btn_menu">MENU</string>
+    <string name="btn_settings">Settings</string>
+    <string name="menu_title">Emulator Menu</string>
+    <string name="menu_resume">Resume</string>
+    <string name="menu_pip">Picture-in-Picture</string>
+    <string name="menu_restart">Restart Game</string>
+    <string name="menu_exit">Exit Game</string>
+
+    <!-- Exit Confirmation Dialog -->
+    <string name="dialog_exit_title">Exit Emulation</string>
+    <string name="dialog_exit_message">Do you want to stop playing and return to console selection?</string>
+    <string name="action_exit">Exit</string>
+    <string name="action_cancel">Cancel</string>
+
+    <!-- Settings Dialog Strings -->
+    <string name="settings_title">Emulator Settings</string>
+    <string name="tab_save_load">Save / Load</string>
+    <string name="tab_video">Display &amp; Scale</string>
+    <string name="tab_speed">Speed</string>
+    <string name="tab_audio">Audio</string>
+    <string name="tab_system">System &amp; Controls</string>
+
+    <!-- Save & Load -->
+    <string name="lbl_save_slot">Select Slot (1 - 10):</string>
+    <string name="btn_save_state">Save State</string>
+    <string name="btn_load_state">Load State</string>
+    <string name="btn_quick_save">Quick Save (Slot 1)</string>
+    <string name="btn_quick_load">Quick Load (Slot 1)</string>
+    <string name="state_saved_success">State saved to Slot %d</string>
+    <string name="state_saved_failed">Failed to save state!</string>
+    <string name="state_loaded_success">State loaded from Slot %d</string>
+    <string name="state_loaded_failed">No save state found for Slot %d!</string>
+    <string name="btn_soft_reset">Soft Reset</string>
+    <string name="btn_power_cycle">Hard Reset (Power Cycle)</string>
+    <string name="msg_reset_done">Game reset</string>
+
+    <!-- Display & Scale -->
+    <string name="lbl_aspect_ratio">Aspect Ratio:</string>
+    <string name="aspect_auto">Auto (Recommended)</string>
+    <string name="aspect_4_3">Standard 4:3</string>
+    <string name="aspect_16_9">Widescreen 16:9</string>
+    <string name="aspect_1_1">1:1 No Stretching</string>
+    <string name="lbl_scale_mode">Scale Mode:</string>
+    <string name="scale_fit">Fit Center (Preserve Ratio)</string>
+    <string name="scale_stretch">Stretch Full</string>
+    <string name="scale_center">Center 1x (Original)</string>
+    <string name="lbl_video_filter">Video Filter:</string>
+    <string name="filter_none">None (Sharp Pixel)</string>
+    <string name="filter_xbrz_2x">xBRZ 2x (High Quality)</string>
+    <string name="filter_xbrz_4x">xBRZ 4x (Ultra Smooth)</string>
+    <string name="filter_hq2x">HQ 2x</string>
+    <string name="filter_scale2x">Scale 2x</string>
+    <string name="filter_prescale_2x">Prescale 2x</string>
+    <string name="filter_prescale_4x">Prescale 4x</string>
+    <string name="filter_ntsc">NTSC Blargg (CRT TV)</string>
+    <string name="filter_lcd">LCD Grid (Handheld)</string>
+    <string name="chk_bilinear">Bilinear Filtering (Smooth pixels)</string>
+    <string name="lbl_scanlines">Scanline Intensity:</string>
+    <string name="lbl_rotation">Screen Rotation:</string>
+    <string name="rot_0">0° (Normal)</string>
+    <string name="rot_90">90°</string>
+    <string name="rot_180">180°</string>
+    <string name="rot_270">270°</string>
+
+    <!-- Speed -->
+    <string name="lbl_emulation_speed">Emulation Speed:</string>
+    <string name="chk_turbo">Turbo Mode (Fast Forward)</string>
+    <string name="lbl_region">Region:</string>
+    <string name="region_auto">Auto</string>
+    <string name="region_ntsc">NTSC (60 Hz)</string>
+    <string name="region_pal">PAL (50 Hz)</string>
+
+    <!-- Audio -->
+    <string name="chk_audio">Enable Audio</string>
+    <string name="lbl_volume">Master Volume: %d%%</string>
+
+    <!-- System & Controls -->
+    <string name="chk_haptic">Haptic Feedback on Touch</string>
+    <string name="lbl_opacity">Virtual Gamepad Opacity: %d%%</string>
+    <string name="chk_remove_sprite_limit">Remove Sprite Limit (Reduce Flicker)</string>
+    <string name="chk_blend_frames">Blend Frames (LCD Ghosting)</string>
+    <string name="chk_gba_color">GBA Color Correction</string>
+    <string name="lbl_gb_palette">Game Boy Palette:</string>
+    <string name="gb_pal_default">Default</string>
+    <string name="gb_pal_dmg">Classic DMG Green</string>
+    <string name="gb_pal_pocket">Pocket Gray</string>
+    <string name="gb_pal_light">Game Boy Light (Teal)</string>
+    <string name="btn_close_settings">Resume Game</string>
+
+    <!-- Cheats & In-Game Controls -->
+    <string name="tab_cheats">Cheats</string>
+    <string name="lbl_cheats_title">Cheat Codes (Game Genie / Action Replay):</string>
+    <string name="hint_cheat_code">Enter code (e.g. GXXZKZVI)...</string>
+    <string name="btn_add_cheat">Add Cheat</string>
+    <string name="btn_clear_cheats">Clear All</string>
+    <string name="cheat_added_success">Cheat code applied!</string>
+    <string name="cheat_added_failed">Invalid cheat code format!</string>
+    <string name="no_cheats_yet">No cheat codes active yet</string>
+    <string name="btn_rewind">⏪ Rewind</string>
+    <string name="msg_screenshot_saved">Screenshot saved to Pictures/T-Emulator</string>
+    <string name="btn_screenshot">Screenshot</string>
+    <string name="btn_pip">Picture-in-Picture</string>
+
+    <!-- Accessibility / Content Descriptions -->
+    <string name="desc_dpad">D-Pad Directional Controller</string>
+    <string name="desc_btn_l">L Shoulder Button</string>
+    <string name="desc_btn_r">R Shoulder Button</string>
+    <string name="desc_btn_a">A Action Button</string>
+    <string name="desc_btn_b">B Action Button</string>
+    <string name="desc_btn_x">X Action Button</string>
+    <string name="desc_btn_y">Y Action Button</string>
+    <string name="desc_btn_select">Select Button</string>
+    <string name="desc_btn_start">Start Button</string>
+    <string name="desc_btn_menu">Menu Button</string>
+    <string name="desc_btn_settings">Settings Button</string>
+    <string name="desc_btn_turbo_a">Turbo A Action Button</string>
+    <string name="desc_btn_turbo_b">Turbo B Action Button</string>
+
+    <string name="privacy_policy_content">T-Emulator respects your privacy.\n\n• Offline Gaming: Free, requires no account, and keeps all game ROM files, save progress, and settings entirely local on your device.\n• Optional Google Sign-In &amp; VIP Billing: Used to verify VIP entitlement with our secure verification server and link your purchase to your account.\n• Google Drive Backup (VIP): ROM and save files are uploaded directly to your personal Google Drive (T-Emulator Backups folder). We do not collect, store, or sell your game files.\n• Data Control: You can delete your app account session and server entitlement records anytime from More &gt; Delete App Account.</string>
+    <string name="error_saving_screenshot">Failed to save screenshot</string>
+    <string name="btn_turbo_on">⚡ Turbo: ON</string>
+    <string name="btn_turbo_off">⏩ Turbo</string>
+
+    <!-- Emulator VIP & Sync Testing Tools -->
+    <string name="dev_tools_title">Emulator VIP &amp; Sync Test Tools</string>
+    <string name="dev_tools_badge">EMULATOR MODE</string>
+    <string name="dev_tools_desc">Test VIP features, Google sign-in fallback, and cloud sync directly in Android emulator.</string>
+    <string name="dev_btn_toggle_vip">Toggle VIP (Active / Free)</string>
+    <string name="dev_btn_test_paywall">Test VIP Paywall Flow</string>
+    <string name="dev_btn_test_login">1-Tap Test Account Login</string>
+    <string name="dev_btn_toggle_drive">Toggle Mock Cloud Drive</string>
+    <string name="dev_btn_reset_test">Reset All Test Data</string>
+    <string name="dev_vip_activated">VIP test mode activated 🌟</string>
+    <string name="dev_vip_revoked">VIP test revoked (Free plan)</string>
+    <string name="dev_login_success">Signed in with emulator test account</string>
+    <string name="dev_reset_complete">All test session &amp; VIP data cleared</string>
+    <string name="sim_dialog_title">Play Billing Purchase Simulator</string>
+    <string name="sim_dialog_desc">Select a simulated response to test the VIP billing flow on emulator:</string>
+    <string name="sim_btn_success">Simulate Payment Success (PURCHASED)</string>
+    <string name="sim_btn_pending">Simulate Slow Payment (PENDING)</string>
+    <string name="sim_btn_canceled">Simulate User Canceled (CANCEL)</string>
+    <string name="sim_btn_error">Simulate Payment Error (ERROR)</string>
+    <string name="dialog_login_emulator_fallback_title">Emulator Sign-in Fallback</string>
+    <string name="dialog_login_emulator_fallback_msg">Google Play Services sign-in is not ready or Web Client ID is not configured. Would you like to sign in using an Emulator Test Account?</string>
+    <string name="dialog_btn_use_test_account">Use Test Account</string>
+    <string name="dialog_btn_retry_google">Retry Google Sign-in</string>
+</resources>

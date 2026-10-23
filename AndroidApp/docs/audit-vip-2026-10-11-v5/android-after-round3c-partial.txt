@@ -1,0 +1,109 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.3/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :app
+WARNING: The option setting 'android.overridePathCheck=true' is experimental.
+The current default is 'false'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+WARNING: C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+C/C++: Ignoring invalid ABI 'riscv64' found in ABI metadata file 'C:\Users\nguye\AppData\Local\Android\Sdk\ndk\28.2.13676358\meta\abis.json'.
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResValues UP-TO-DATE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsRelease UP-TO-DATE
+> Task :app:generateReleaseResValues UP-TO-DATE
+> Task :app:generateReleaseResources UP-TO-DATE
+> Task :app:mergeReleaseResources UP-TO-DATE
+> Task :app:packageReleaseResources UP-TO-DATE
+> Task :app:parseReleaseLocalResources UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesRelease UP-TO-DATE
+> Task :app:generateReleaseBuildConfig UP-TO-DATE
+> Task :app:checkReleaseAarMetadata UP-TO-DATE
+> Task :app:mapReleaseSourceSetPaths UP-TO-DATE
+> Task :app:createReleaseCompatibleScreenManifests UP-TO-DATE
+> Task :app:extractDeepLinksRelease UP-TO-DATE
+> Task :app:processReleaseMainManifest UP-TO-DATE
+> Task :app:processReleaseManifest UP-TO-DATE
+> Task :app:processReleaseManifestForPackage UP-TO-DATE
+> Task :app:processReleaseResources UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :app:preDebugUnitTestBuild UP-TO-DATE
+> Task :app:javaPreCompileDebugUnitTest UP-TO-DATE
+> Task :app:kaptGenerateStubsDebugKotlin
+> Task :app:kaptGenerateStubsReleaseKotlin
+> Task :app:kaptDebugKotlin UP-TO-DATE
+> Task :app:kaptReleaseKotlin UP-TO-DATE
+> Task :app:compileDebugKotlin
+> Task :app:compileReleaseKotlin
+> Task :app:compileDebugJavaWithJavac UP-TO-DATE
+> Task :app:processDebugJavaRes UP-TO-DATE
+> Task :app:bundleDebugClassesToRuntimeJar
+> Task :app:bundleDebugClassesToCompileJar
+> Task :app:kaptGenerateStubsDebugUnitTestKotlin SKIPPED
+> Task :app:kaptDebugUnitTestKotlin SKIPPED
+> Task :app:compileDebugUnitTestKotlin
+> Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :app:processDebugUnitTestJavaRes UP-TO-DATE
+
+> Task :app:testDebugUnitTest FAILED
+
+com.temulator.app.billing.EntitlementRepositoryIntegrationAuditTest > missingBackendConfigurationMustNotBecomeAValidCachedCloudGrant FAILED
+    java.lang.AssertionError at EntitlementRepositoryIntegrationAuditTest.kt:48
+
+com.temulator.app.billing.EntitlementRepositoryIntegrationAuditTest > writingOtherUsersMetadataMustNotGrantCurrentUser FAILED
+    java.lang.AssertionError at EntitlementRepositoryIntegrationAuditTest.kt:56
+
+57 tests completed, 2 failed
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:testDebugUnitTest'.
+> There were failing tests. See the report at: file:///F:/AI/T-Emulator/AndroidApp/app/build/reports/tests/testDebugUnitTest/index.html
+
+* Try:
+45 actionable tasks: 8 executed, 37 up-to-date
+> Run with --scan to get full insights.
+
+BUILD FAILED in 11s

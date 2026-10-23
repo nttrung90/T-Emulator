@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardGame"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardBackgroundColor="#1A1D2B"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="0dp"
+    app:strokeColor="#262B40"
+    app:strokeWidth="1dp"
+    app:rippleColor="#3364B5F6">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp">
+
+        <!-- Console Badge Container -->
+        <FrameLayout
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/bg_console_badge">
+
+            <TextView
+                android:id="@+id/tvConsoleBadge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="20sp"
+                tools:text="🎮" />
+        </FrameLayout>
+
+        <!-- Name and Subtitle Tags -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvGameTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:lineSpacingMultiplier="1.1"
+                tools:text="Super Mario World (USA)" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- Short Console Tag (e.g. SNES, GBA) -->
+                <TextView
+                    android:id="@+id/tvConsoleTag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_tag_console"
+                    android:paddingStart="6dp"
+                    android:paddingEnd="6dp"
+                    android:paddingTop="1.5dp"
+                    android:paddingBottom="1.5dp"
+                    android:textColor="#90CAF9"
+                    android:textSize="10.5sp"
+                    android:textStyle="bold"
+                    tools:text="SNES" />
+
+                <!-- Subtitle (source / extra info) -->
+                <TextView
+                    android:id="@+id/tvGameSubtitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textColor="#8090A0"
+                    android:textSize="11.5sp"
+                    tools:text="• Đã quét" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Cloud Backup Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCardBackup"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="6dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:padding="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            app:cornerRadius="17dp"
+            app:strokeColor="#2E3550"
+            app:strokeWidth="1dp"
+            app:backgroundTint="#202538"
+            app:icon="@drawable/ic_cloud_upload"
+            app:iconSize="16dp"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:iconTint="#64B5F6"
+            app:rippleColor="#4064B5F6" />
+
+        <!-- Chevron / Action Indicator -->
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="6dp"
+            android:src="@drawable/ic_chevron_right"
+            app:tint="#455A64" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

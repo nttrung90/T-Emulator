@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users collection: users can only read their own profile
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false; // Only server backend can write
+
+      // Entitlements: users can only read their own entitlements
+      match /entitlements/{entitlementId} {
+        allow read: if request.auth != null && request.auth.uid == userId;
+        allow write: if false; // Enforce server-side grant only
+      }
+    }
+
+    // Purchases tracking: private server-only collection
+    match /purchases/{purchaseToken} {
+      allow read, write: if false; // Server-only
+    }
+  }
+}

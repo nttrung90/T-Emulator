@@ -1,0 +1,22 @@
+AndroidApp\docs\audit-vip-2026-10-10-v4\AppDatabaseStub.kt:6:40: warning: parameter 'context' is never used
+    companion object { fun getInstance(context: Context): AppDatabase = error("No real Room in standalone audit") }
+                                       ^
+FAIL: T01 SAVE_ONLY without files[] must fail before writing save: Accepted SAVE_ONLY without files[]; saves=[local.sav, remote.sav]
+FAIL: T02 canonical duplicate ZIP paths must be rejected: Accepted two ZIP entries resolving to same file
+FAIL: T03 SAVE_ONLY must reject a missing actual ROM despite cached matching hash: Restored saves against a nonexistent ROM
+FAIL: T04 restore without usable DAO must not commit and report success: Success and ROM committed with no database
+FAIL: T05 different prefixes mapping to same state slot must not overwrite: Both valid checksummed states map to local_1.mss; final=SLOT_FIRST
+FAIL: T06 new-game DB failure must remove newly committed files: DB insert failed but orphan ROM/save remains after rollback
+V4 restore audit: 6 failures / 6 probes
+Exception in thread "main" java.lang.IllegalStateException: Remaining restore regressions reproduced
+	at audit.RestoreAuditKt$main$1.invokeSuspend(RestoreAudit.kt:90)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.EventLoopImplBase.processNextEvent(EventLoop.common.kt:280)
+	at kotlinx.coroutines.BlockingCoroutine.joinBlocking(Builders.kt:85)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking(Builders.kt:59)
+	at kotlinx.coroutines.BuildersKt.runBlocking(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__BuildersKt.runBlocking$default(Builders.kt:38)
+	at kotlinx.coroutines.BuildersKt.runBlocking$default(Unknown Source)
+	at audit.RestoreAuditKt.main(RestoreAudit.kt:45)
+	at audit.RestoreAuditKt.main(RestoreAudit.kt)

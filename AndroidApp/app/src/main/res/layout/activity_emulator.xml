@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/emulatorRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0A0A0E">
+
+    <!-- Top Half: Game Display Screen -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#000000">
+        
+        <ImageView
+            android:id="@+id/gameScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitCenter"
+            android:contentDescription="@null" />
+
+        <!-- Floating Top-Left Controls: Settings, Turbo, Rewind -->
+        <LinearLayout
+            android:id="@+id/topBarLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:elevation="6dp">
+
+            <!-- Settings Button -->
+            <LinearLayout
+                android:id="@+id/btnSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_settings_bg"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingStart="10dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginEnd="6dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⚙"
+                    android:textColor="#90CAF9"
+                    android:textSize="14sp"
+                    android:layout_marginEnd="4dp" />
+
+                <TextView
+                    android:id="@+id/tvSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/btn_settings"
+                    android:textColor="#E3F2FD"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Turbo Button -->
+            <TextView
+                android:id="@+id/btnTurbo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_settings_bg"
+                android:gravity="center"
+                android:paddingStart="9dp"
+                android:paddingEnd="9dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginEnd="6dp"
+                android:text="⏩ Turbo"
+                android:textColor="#FFCA28"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- Rewind Button -->
+            <TextView
+                android:id="@+id/btnRewind"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_settings_bg"
+                android:gravity="center"
+                android:paddingStart="9dp"
+                android:paddingEnd="9dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="@string/btn_rewind"
+                android:textColor="#EF5350"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <!-- Floating Top-Right Controls: Screenshot & FPS -->
+        <LinearLayout
+            android:id="@+id/topBarRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:elevation="6dp">
+
+            <!-- PiP Button -->
+            <TextView
+                android:id="@+id/btnPip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_settings_bg"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginEnd="6dp"
+                android:text="⧉"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:contentDescription="@string/btn_pip"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <!-- Screenshot Button -->
+            <TextView
+                android:id="@+id/btnScreenshot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_settings_bg"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:layout_marginEnd="6dp"
+                android:text="📸"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/tvFps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_settings_bg"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:text="60 FPS"
+                android:textColor="#80D8FF"
+                android:textSize="11sp" />
+        </LinearLayout>
+            
+    </FrameLayout>
+
+    <!-- Bottom Half: Virtual Gamepad Controls -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/gamepadArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#12151E">
+
+        <!-- L Shoulder Button -->
+        <TextView
+            android:id="@+id/btnL"
+            android:layout_width="86dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/pill_button"
+            android:text="L"
+            android:contentDescription="@string/desc_btn_l"
+            android:textColor="#ECEFF1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- MENU Button centered at top -->
+        <TextView
+            android:id="@+id/btnMenu"
+            android:layout_width="76dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/pill_button"
+            android:text="@string/btn_menu"
+            android:contentDescription="@string/desc_btn_menu"
+            android:textColor="#90CAF9"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- R Shoulder Button -->
+        <TextView
+            android:id="@+id/btnR"
+            android:layout_width="86dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/pill_button"
+            android:text="R"
+            android:contentDescription="@string/desc_btn_r"
+            android:textColor="#ECEFF1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Center Hub Anchor for Action Buttons -->
+        <View
+            android:id="@+id/actionHub"
+            android:layout_width="1dp"
+            android:layout_height="1dp"
+            android:visibility="invisible"
+            app:layout_constraintHorizontal_bias="0.76"
+            app:layout_constraintVertical_bias="0.54"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <!-- D-Pad (Directional Pad) -->
+        <ImageView
+            android:id="@+id/dpad"
+            android:layout_width="146dp"
+            android:layout_height="146dp"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/dpad_bg"
+            android:contentDescription="@string/desc_dpad"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/actionHub"
+            app:layout_constraintBottom_toBottomOf="@id/actionHub" />
+
+        <!-- Action Button X (Top - Blue) -->
+        <TextView
+            android:id="@+id/btnX"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="18dp"
+            android:background="@drawable/btn_action_x"
+            android:text="X"
+            android:contentDescription="@string/desc_btn_x"
+            android:textColor="#90CAF9"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/actionHub"
+            app:layout_constraintStart_toStartOf="@id/actionHub"
+            app:layout_constraintEnd_toEndOf="@id/actionHub" />
+
+        <!-- Action Button B (Bottom - Yellow) -->
+        <TextView
+            android:id="@+id/btnB"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/btn_action_b"
+            android:text="B"
+            android:contentDescription="@string/desc_btn_b"
+            android:textColor="#FFE082"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/actionHub"
+            app:layout_constraintStart_toStartOf="@id/actionHub"
+            app:layout_constraintEnd_toEndOf="@id/actionHub" />
+
+        <!-- Action Button Y (Left - Green) -->
+        <TextView
+            android:id="@+id/btnY"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginEnd="18dp"
+            android:background="@drawable/btn_action_y"
+            android:text="Y"
+            android:contentDescription="@string/desc_btn_y"
+            android:textColor="#A5D6A7"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@id/actionHub"
+            app:layout_constraintTop_toTopOf="@id/actionHub"
+            app:layout_constraintBottom_toBottomOf="@id/actionHub" />
+
+        <!-- Action Button A (Right - Red) -->
+        <TextView
+            android:id="@+id/btnA"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="18dp"
+            android:background="@drawable/btn_action_a"
+            android:text="A"
+            android:contentDescription="@string/desc_btn_a"
+            android:textColor="#EF9A9A"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@id/actionHub"
+            app:layout_constraintTop_toTopOf="@id/actionHub"
+            app:layout_constraintBottom_toBottomOf="@id/actionHub" />
+
+        <!-- NES / GB / GBA Action Buttons -->
+        <!-- NES Button B (Bottom-Left - Retro Crimson) -->
+        <TextView
+            android:id="@+id/btnNesB"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_action_nes_b"
+            android:text="B"
+            android:contentDescription="@string/desc_btn_b"
+            android:textColor="#FFCDD2"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@id/actionHub"
+            app:layout_constraintTop_toTopOf="@id/actionHub" />
+
+        <!-- NES Button A (Bottom-Right - Retro Crimson, angled slightly upward) -->
+        <TextView
+            android:id="@+id/btnNesA"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/btn_action_nes_a"
+            android:text="A"
+            android:contentDescription="@string/desc_btn_a"
+            android:textColor="#FFCDD2"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/actionHub"
+            app:layout_constraintBottom_toBottomOf="@id/actionHub" />
+
+        <!-- NES Button Turbo B (Top-Left, above B - Gold/Amber) -->
+        <TextView
+            android:id="@+id/btnNesTb"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/btn_action_nes_tb"
+            android:text="TB"
+            android:contentDescription="@string/desc_btn_turbo_b"
+            android:textColor="#FFE082"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/btnNesB"
+            app:layout_constraintStart_toStartOf="@id/btnNesB"
+            app:layout_constraintEnd_toEndOf="@id/btnNesB" />
+
+        <!-- NES Button Turbo A (Top-Right, above A - Gold/Amber) -->
+        <TextView
+            android:id="@+id/btnNesTa"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/btn_action_nes_ta"
+            android:text="TA"
+            android:contentDescription="@string/desc_btn_turbo_a"
+            android:textColor="#FFE082"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/btnNesA"
+            app:layout_constraintStart_toStartOf="@id/btnNesA"
+            app:layout_constraintEnd_toEndOf="@id/btnNesA" />
+
+        <!-- SELECT Button (Above D-Pad) -->
+        <TextView
+            android:id="@+id/btnSelect"
+            android:layout_width="66dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="28dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/pill_button"
+            android:text="SELECT"
+            android:contentDescription="@string/desc_btn_select"
+            android:textColor="#CFD8DC"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/dpad"
+            app:layout_constraintStart_toStartOf="@id/dpad"
+            app:layout_constraintEnd_toStartOf="@+id/btnStart"
+            app:layout_constraintHorizontal_chainStyle="packed" />
+
+        <!-- START Button (Above D-Pad) -->
+        <TextView
+            android:id="@+id/btnStart"
+            android:layout_width="66dp"
+            android:layout_height="32dp"
+            android:layout_marginBottom="28dp"
+            android:background="@drawable/pill_button"
+            android:text="START"
+            android:contentDescription="@string/desc_btn_start"
+            android:textColor="#CFD8DC"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/dpad"
+            app:layout_constraintStart_toEndOf="@+id/btnSelect"
+            app:layout_constraintEnd_toEndOf="@id/dpad" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

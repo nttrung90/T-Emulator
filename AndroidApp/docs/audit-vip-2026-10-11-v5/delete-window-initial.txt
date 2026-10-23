@@ -1,0 +1,35 @@
+C11 { status: 200, data: { entitled: true, status: 'GRANTED' } } {
+  uid: 'user_A',
+  tokenHash: 'aef8b61f8327b889889f0d51958b15fc21a6d8b683b6dc5e8176f332ca575e09',
+  orderId: 'GPA.DELETE_WINDOW',
+  productId: 'vip_lifetime',
+  acknowledgementState: 1,
+  voided: false,
+  expiryTimeMillis: null,
+  verifiedAt: 1791688283498
+}
+✖ C11: deletion must block a new verify before destructive cleanup begins (5.8171ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 202.4814
+
+✖ failing tests:
+
+test at AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:79:1
+✖ C11: deletion must block a new verify before destructive cleanup begins (5.8171ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to: true
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:96:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: true,
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }

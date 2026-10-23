@@ -1,0 +1,20 @@
+[
+  {
+    "Path": "F:\\AI\\T-Emulator\\AndroidApp\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+    "Sha256": "0264379811AFA9542BFB925A2DDA513077595202AC6295907B1EBC7C1365B41D",
+    "Bytes": 22274804,
+    "Modified": "2026-10-13T23:04:17.8633668+07:00"
+  },
+  {
+    "Path": "F:\\AI\\T-Emulator\\AndroidApp\\docs\\play-quality-2026-10-13\\device-test\\out\\app-r8-qa-debug-signed.apk",
+    "Sha256": "6E29A4F1232FEE5CE7E14A84E865C48DA19957511DFBE7C9930B4E2010DC70E7",
+    "Bytes": 13731096,
+    "Modified": "2026-10-13T23:09:20.7028644+07:00"
+  },
+  {
+    "Path": "F:\\AI\\T-Emulator\\AndroidApp\\docs\\play-quality-2026-10-13\\device-test\\out\\quality-test.apk",
+    "Sha256": "661ED5BDCD823B4194AFA8CFFE46C5517ADE7655C78A6084C50305AE7ECB4720",
+    "Bytes": 20883,
+    "Modified": "2026-10-13T23:36:34.8848783+07:00"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "temulator-backend",
+  "version": "1.0.0",
+  "description": "Verification, Entitlement & RTDN Server for T-Emulator",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "firebase-admin": "^12.0.0",
+    "googleapis": "^134.0.0",
+    "dotenv": "^16.4.5"
+  }
+}

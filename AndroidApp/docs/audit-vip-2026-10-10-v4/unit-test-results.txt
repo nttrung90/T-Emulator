@@ -1,0 +1,9 @@
+
+name                                              tests failures errors
+----                                              ----- -------- ------
+com.temulator.app.billing.VipEmulatorTest         6     0        0
+com.temulator.app.cloud.GameRestoreSecurityTest   16    0        0
+com.temulator.app.GameRepositoryAntiCollisionTest 3     0        0
+com.temulator.app.search.GameSearchNormalizerTest 5     0        0
+com.temulator.app.storage.GameStorageManagerTest  2     0        0
+

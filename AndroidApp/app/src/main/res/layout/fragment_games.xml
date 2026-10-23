@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#14151B"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="14dp">
+
+    <!-- 1. Header with title, game count, and primary actions -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/headerActionButtons"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvGamesHeaderTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/games_title"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/tvGamesHeaderSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textSize="12sp"
+                android:textColor="#8090A0"
+                tools:text="12 game" />
+        </LinearLayout>
+
+        <!-- Right action buttons: Rescan & Select Folder -->
+        <LinearLayout
+            android:id="@+id/headerActionButtons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Rescan button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRescan"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="38dp"
+                android:layout_height="38dp"
+                android:layout_marginEnd="8dp"
+                android:padding="0dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                app:cornerRadius="19dp"
+                app:strokeColor="#2E354D"
+                app:strokeWidth="1dp"
+                app:backgroundTint="#1D2133"
+                app:icon="@drawable/ic_refresh"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:iconSize="18dp"
+                app:iconTint="#90CAF9"
+                app:rippleColor="#4090CAF9" />
+
+            <!-- Select Folder Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSelectFolder"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:text="@string/btn_select_folder"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="19dp"
+                app:backgroundTint="#1976D2"
+                app:icon="@drawable/ic_folder"
+                app:iconSize="16dp"
+                app:iconPadding="6dp"
+                app:iconTint="#FFFFFF"
+                app:rippleColor="#40FFFFFF" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- 2. Library Folder & Cloud Quick Actions Bar -->
+    <LinearLayout
+        android:id="@+id/cloudActionsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <!-- Folder Info Pill (clickable to change folder) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardFolderInfo"
+            android:layout_width="0dp"
+            android:layout_height="34dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#1A1E2D"
+            app:cardCornerRadius="17dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#272E42"
+            app:strokeWidth="1dp"
+            app:rippleColor="#2264B5F6">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp">
+
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_folder"
+                    app:tint="#64B5F6" />
+
+                <TextView
+                    android:id="@+id/tvScanPath"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:ellipsize="middle"
+                    android:singleLine="true"
+                    android:text="@string/games_folder_not_selected"
+                    android:textColor="#B0BEC5"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Cloud VIP Backup Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBackupVip"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:layout_marginEnd="6dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:text="@string/btn_backup_cloud"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="#FFD54F"
+            app:cornerRadius="17dp"
+            app:strokeColor="#453818"
+            app:strokeWidth="1dp"
+            app:backgroundTint="#241E14"
+            app:icon="@drawable/ic_cloud_upload"
+            app:iconSize="14dp"
+            app:iconPadding="4dp"
+            app:iconTint="#FFD54F"
+            app:rippleColor="#40FFD54F" />
+
+        <!-- View Backups Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnViewBackups"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="34dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:insetLeft="0dp"
+            android:insetRight="0dp"
+            android:text="@string/btn_view_backups"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="#81C784"
+            app:cornerRadius="17dp"
+            app:strokeColor="#1E3B24"
+            app:strokeWidth="1dp"
+            app:backgroundTint="#142417"
+            app:icon="@drawable/ic_storage_backups"
+            app:iconSize="14dp"
+            app:iconPadding="4dp"
+            app:iconTint="#81C784"
+            app:rippleColor="#4081C784" />
+    </LinearLayout>
+
+    <!-- 3. Modern Search Input Field -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="6dp"
+        app:boxBackgroundMode="filled"
+        app:boxBackgroundColor="#1A1D2B"
+        app:boxCornerRadiusTopStart="16dp"
+        app:boxCornerRadiusTopEnd="16dp"
+        app:boxCornerRadiusBottomStart="16dp"
+        app:boxCornerRadiusBottomEnd="16dp"
+        app:boxStrokeColor="#64B5F6"
+        app:boxStrokeWidth="1dp"
+        app:boxStrokeWidthFocused="1.5dp"
+        app:endIconMode="clear_text"
+        app:endIconTint="#78909C"
+        app:startIconDrawable="@drawable/ic_search"
+        app:startIconTint="#64B5F6">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etSearchGames"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:hint="@string/games_search_hint"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#607282"
+            android:textSize="13.5sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 4. Search results count and scanning indicator strip -->
+    <LinearLayout
+        android:id="@+id/layoutStatusStrip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
+        <TextView
+            android:id="@+id/tvResultCount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="#90CAF9"
+            android:textSize="12sp"
+            android:visibility="gone"
+            tools:text="8 / 120 game"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/layoutScanningIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ProgressBar
+                android:id="@+id/progressScanning"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:indeterminateTint="#64B5F6" />
+
+            <TextView
+                android:id="@+id/tvScanningStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/games_scanning"
+                android:textColor="#64B5F6"
+                android:textSize="11.5sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 5. Game List in RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGames"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        android:scrollbars="vertical" />
+
+    <!-- 6. Empty State View (When Library is Empty) -->
+    <LinearLayout
+        android:id="@+id/layoutEmptyState"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_gamepad_empty"
+            app:tint="#2B334D" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/games_empty_title"
+            android:textColor="#ECEFF1"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvEmptyState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="22dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:text="@string/games_empty_desc"
+            android:textColor="#78909C"
+            android:textSize="13sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEmptySelectFolder"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:text="@string/games_btn_select_rom_folder"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:cornerRadius="21dp"
+            app:backgroundTint="#1976D2"
+            app:icon="@drawable/ic_folder"
+            app:iconSize="18dp"
+            app:iconPadding="8dp"
+            app:iconTint="#FFFFFF" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEmptyRestoreCloud"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/games_btn_restore_cloud"
+            android:textColor="#81C784"
+            android:textSize="12sp"
+            app:icon="@drawable/ic_storage_backups"
+            app:iconSize="16dp"
+            app:iconPadding="6dp"
+            app:iconTint="#81C784" />
+    </LinearLayout>
+
+    <!-- 7. No Search Results View -->
+    <LinearLayout
+        android:id="@+id/layoutNoResults"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone"
+        tools:visibility="gone">
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/ic_search_empty"
+            app:tint="#2B334D" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="@string/games_search_no_results"
+            android:textColor="#ECEFF1"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="18dp"
+            android:gravity="center"
+            android:text="@string/games_search_no_results_desc"
+            android:textColor="#78909C"
+            android:textSize="13sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClearSearch"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/games_btn_clear_search"
+            android:textColor="#64B5F6"
+            android:textSize="12sp"
+            app:cornerRadius="19dp"
+            app:strokeColor="#2E3D59"
+            app:strokeWidth="1dp"
+            app:icon="@drawable/ic_search"
+            app:iconSize="14dp"
+            app:iconPadding="6dp"
+            app:iconTint="#64B5F6" />
+    </LinearLayout>
+
+</LinearLayout>

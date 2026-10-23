@@ -1,0 +1,15 @@
+AndroidApp\docs\audit-vip-2026-10-11-v5\AppDatabaseStub.kt:6:40: warning: parameter 'context' is never used
+    companion object { fun getInstance(context: Context): AppDatabase = error("No real Room in standalone audit") }
+                                       ^
+AndroidApp\docs\audit-vip-2026-10-11-v5\RestoreAudit.kt:17:83: warning: parameter 'root' is never used, could be renamed to _
+    probe("S01 ALL snapshot must hash actual ROM instead of stale DB checksum") { root, storage ->
+                                                                                  ^
+AndroidApp\docs\audit-vip-2026-10-11-v5\RestoreAudit.kt:25:96: warning: parameter 'root' is never used, could be renamed to _
+    probe("S02 SAVE_ONLY snapshot must resolve a valid ROM checksum when DB hash is absent") { root, storage ->
+                                                                                               ^
+FAIL: S01 ALL snapshot must hash actual ROM instead of stale DB checksum: Backup reports success but ROM checksum describes old bytes
+FAIL: S02 SAVE_ONLY snapshot must resolve a valid ROM checksum when DB hash is absent: Created SAVE_ONLY backup with empty checksum; restore will reject it
+V5 snapshot audit: 2 failures / 2 probes
+Exception in thread "main" java.lang.IllegalStateException: Remaining snapshot regressions reproduced
+	at audit.RestoreAuditKt.main(RestoreAudit.kt:33)
+	at audit.RestoreAuditKt.main(RestoreAudit.kt)

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclude staging and sensitive auth/cloud sessions from Android Auto Backup -->
+    <exclude domain="file" path="staging" />
+    <exclude domain="sharedpref" path="auth_session.xml" />
+    <exclude domain="sharedpref" path="entitlement_cache.xml" />
+    <exclude domain="sharedpref" path="drive_session.xml" />
+</full-backup-content>

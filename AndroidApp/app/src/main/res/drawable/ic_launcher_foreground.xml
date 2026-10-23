@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Bumpers behind controller body -->
+    <path
+        android:fillColor="#2E3A48"
+        android:pathData="M 31.0,43.0 C 31.0,39.5 34.0,37.5 37.5,37.5 C 41.0,37.5 44.0,39.5 44.0,43.0 Z" />
+    <path
+        android:fillColor="#2E3A48"
+        android:pathData="M 64.0,43.0 C 64.0,39.5 67.0,37.5 70.5,37.5 C 74.0,37.5 77.0,39.5 77.0,43.0 Z" />
+
+    <!-- Subtle bottom rim for depth -->
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M 54.0,42.9 C 58.5,42.9 63.5,42.7 67.5,41.9 C 72.0,41.0 76.5,42.5 79.5,45.9 C 82.8,49.7 84.0,55.7 84.0,61.7 C 84.0,66.7 80.5,70.2 75.5,70.2 C 70.8,70.2 67.2,66.5 64.5,62.5 C 62.0,58.9 58.2,57.5 54.0,57.5 C 49.8,57.5 46.0,58.9 43.5,62.5 C 40.8,66.5 37.2,70.2 32.5,70.2 C 27.5,70.2 24.0,66.7 24.0,61.7 C 24.0,55.7 25.2,49.7 28.5,45.9 C 31.5,42.5 36.0,41.0 40.5,41.9 C 44.5,42.7 49.5,42.9 54.0,42.9 Z" />
+
+    <!-- Controller main white face -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M 54.0,42.2 C 58.5,42.2 63.5,42.0 67.5,41.2 C 72.0,40.3 76.5,41.8 79.5,45.2 C 82.8,49.0 84.0,55.0 84.0,61.0 C 84.0,66.0 80.5,69.5 75.5,69.5 C 70.8,69.5 67.2,65.8 64.5,61.8 C 62.0,58.2 58.2,56.8 54.0,56.8 C 49.8,56.8 46.0,58.2 43.5,61.8 C 40.8,65.8 37.2,69.5 32.5,69.5 C 27.5,69.5 24.0,66.0 24.0,61.0 C 24.0,55.0 25.2,49.0 28.5,45.2 C 31.5,41.8 36.0,40.3 40.5,41.2 C 44.5,42.0 49.5,42.2 54.0,42.2 Z" />
+
+    <!-- D-Pad well accent -->
+    <path
+        android:fillColor="#F1F5F9"
+        android:pathData="M 28.00,53.50 A 8.00,8.00 0 1,0 44.00,53.50 A 8.00,8.00 0 1,0 28.00,53.50 Z" />
+
+    <!-- Action buttons well accent -->
+    <path
+        android:fillColor="#F1F5F9"
+        android:pathData="M 64.00,53.50 A 8.00,8.00 0 1,0 80.00,53.50 A 8.00,8.00 0 1,0 64.00,53.50 Z" />
+
+    <!-- D-Pad cross -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M 31.00,51.10 L 41.00,51.10 A 1.00,1.00 0 0,1 42.00,52.10 L 42.00,54.90 A 1.00,1.00 0 0,1 41.00,55.90 L 31.00,55.90 A 1.00,1.00 0 0,1 30.00,54.90 L 30.00,52.10 A 1.00,1.00 0 0,1 31.00,51.10 Z" />
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M 34.60,47.50 L 37.40,47.50 A 1.00,1.00 0 0,1 38.40,48.50 L 38.40,58.50 A 1.00,1.00 0 0,1 37.40,59.50 L 34.60,59.50 A 1.00,1.00 0 0,1 33.60,58.50 L 33.60,48.50 A 1.00,1.00 0 0,1 34.60,47.50 Z" />
+    <path
+        android:fillColor="#0F172A"
+        android:pathData="M 34.70,53.50 A 1.30,1.30 0 1,0 37.30,53.50 A 1.30,1.30 0 1,0 34.70,53.50 Z" />
+
+    <!-- Action Buttons (SNES layout) -->
+    <path
+        android:fillColor="#0C76FE"
+        android:pathData="M 69.60,48.90 A 2.40,2.40 0 1,0 74.40,48.90 A 2.40,2.40 0 1,0 69.60,48.90 Z" />
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M 74.20,53.50 A 2.40,2.40 0 1,0 79.00,53.50 A 2.40,2.40 0 1,0 74.20,53.50 Z" />
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M 69.60,58.10 A 2.40,2.40 0 1,0 74.40,58.10 A 2.40,2.40 0 1,0 69.60,58.10 Z" />
+    <path
+        android:fillColor="#10B981"
+        android:pathData="M 65.00,53.50 A 2.40,2.40 0 1,0 69.80,53.50 A 2.40,2.40 0 1,0 65.00,53.50 Z" />
+
+    <!-- Select and Start buttons -->
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M 48.0,52.8 L 51.5,53.8 A 0.9,0.9 0 0,1 51.0,55.4 L 47.5,54.4 A 0.9,0.9 0 0,1 48.0,52.8 Z" />
+    <path
+        android:fillColor="#64748B"
+        android:pathData="M 53.8,52.8 L 57.3,53.8 A 0.9,0.9 0 0,1 56.8,55.4 L 53.3,54.4 A 0.9,0.9 0 0,1 53.8,52.8 Z" />
+</vector>

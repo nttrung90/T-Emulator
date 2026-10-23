@@ -1,0 +1,28 @@
+✖ C22: absent Play acknowledgement API must remain unacknowledged rather than record false success (5.4814ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 9.8784
+
+✖ failing tests:
+
+test at docs\audit-vip-2026-10-11-v5\backend-ack-audit.cjs:5:1
+✖ C22: absent Play acknowledgement API must remain unacknowledged rather than record false success (5.4814ms)
+  AssertionError [ERR_ASSERTION]: No Play acknowledgement call succeeded, so marking ack=1 loses the required retry
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-ack-audit.cjs:12:10)
+      at async Test.run (node:internal/test_runner/test:1208:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

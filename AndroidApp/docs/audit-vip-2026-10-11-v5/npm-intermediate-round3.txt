@@ -1,0 +1,94 @@
+
+> temulator-backend@1.0.0 test
+> node test.js
+
+▶ F02 — Backend Configuration & Input Validation
+  ✔ Production mode rejects unauthenticated request with 401 (45.4772ms)
+  ✔ Production mode rejects mock bearer fallback with 503 if Firebase not initialized (6.8139ms)
+  ✔ Verification rejects missing, non-string, or empty purchaseToken with 400 (15.9397ms)
+  ✔ Verification fails with 503 in production if Play service account is missing (4.2337ms)
+✔ F02 — Backend Configuration & Input Validation (73.7321ms)
+▶ F04 — Token Ownership & Cross-Account Replay Protection
+  ✔ Token verified by User A cannot be claimed by User B (409 Conflict) (10.9306ms)
+  ✔ Purchase verification with obfuscated account ID mismatch returns 403 (6.1801ms)
+✔ F04 — Token Ownership & Cross-Account Replay Protection (17.3536ms)
+▶ F06 — RTDN Authentication, Deduplication & Scoped Revocation
+  ✔ RTDN rejects unauthorized requests when secret or auth required in production (3.2719ms)
+  ✔ RTDN deduplicates repeated messageId (4.971ms)
+  ✔ RTDN voiding an old purchase does not revoke entitlement if user has another active purchase (8.0265ms)
+✔ F06 — RTDN Authentication, Deduplication & Scoped Revocation (16.5925ms)
+▶ F08 — Verification & Acknowledgment Flow
+  ✔ Acknowledge is called on Play Developer API during verification (3.0365ms)
+✔ F08 — Verification & Acknowledgment Flow (3.147ms)
+[Verify] Play acknowledge failed, entitlement preserved for retry: injected Play outage
+[Verify] Play acknowledge retry failed, entitlement preserved: injected Play outage
+[RTDN] Error processing notification: Error: injected transient DB outage
+    at Object.get (F:\AI\T-Emulator\AndroidApp\backend\test.js:529:69)
+    at Layer.handle (F:\AI\T-Emulator\AndroidApp\backend\app.js:769:115)
+    at callAudit (F:\AI\T-Emulator\AndroidApp\backend\test.js:577:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\backend\test.js:613:23)
+    at async Test.run (node:internal/test_runner/test:1208:7)
+    at async Suite.processPendingSubtests (node:internal/test_runner/test:831:7)
+[Account] Auth deleteUser error: injected Firebase outage
+[RTDN] Error processing notification: Error: Injected Play outage
+    at Object.get (F:\AI\T-Emulator\AndroidApp\backend\test.js:1006:76)
+    at Layer.handle (F:\AI\T-Emulator\AndroidApp\backend\app.js:811:87)
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at async call (F:\AI\T-Emulator\AndroidApp\backend\test.js:998:13)
+    at async TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\backend\test.js:1008:23)
+    at async Test.run (node:internal/test_runner/test:1208:7)
+    at async Promise.all (index 0)
+    at async Suite.run (node:internal/test_runner/test:1619:7)
+    at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+▶ F15 — Account & Entitlement Deletion
+  ✔ DELETE /v1/account revokes entitlement and deletes user (6.1602ms)
+✔ F15 — Account & Entitlement Deletion (6.2736ms)
+▶ Audit Probes — R01 to R05 Regressions (V01, V02, V03, V04, V12)
+  ✔ R01: RTDN must reject an arbitrary bearer in production (V01) (1.3666ms)
+  ✔ R02: lifetime verification must query the lifetime product (V02) (0.3741ms)
+  ✔ R03: retry verify must retry an unacknowledged purchase (V03) (0.6335ms)
+  ✔ R04: failed RTDN must remain retryable with the same messageId (V04) (0.7229ms)
+  ✔ R05: Firebase deletion failure must not report account deleted (V12) (0.4219ms)
+✔ Audit Probes — R01 to R05 Regressions (V01, V02, V03, V04, V12) (3.8095ms)
+▶ Audit Probes — N01 to N04 Regressions (G02, G03, G04)
+  ✔ N01: app user Firebase token must not authenticate Pub/Sub (G02) (0.9837ms)
+  ✔ N02: documented SUBSCRIPTION_STATE_ACTIVE string must grant yearly VIP (G03) (0.4594ms)
+  ✔ N03: expired stored subscription must not remain active on GET (G04) (0.2862ms)
+  ✔ N04: a purchase record must not resurrect a deleted entitlement (G04) (0.3059ms)
+✔ Audit Probes — N01 to N04 Regressions (G02, G03, G04) (2.2567ms)
+▶ Audit Probes — B01 to B12 Regressions (H01 to H05)
+  ✔ B01: changed messageId must still reject Firebase user token when OIDC verifier is absent (1.0644ms)
+  ✔ B02: production OIDC verifier must reject a different verified service account email (1.3823ms)
+  ✔ B03: production must fail closed when expected Pub/Sub audience is missing (0.7133ms)
+  ✔ B04: a subscription for another product must not grant vip_yearly (0.4164ms)
+  ✔ B05: yearly subscription without expiry must not become permanent VIP (0.2752ms)
+  ✔ B06: verify must requery a renewed token even if stored expiry has passed (0.4977ms)
+  ✔ B07: RTDN renewal must update yearly entitlement from Play (0.6ms)
+  ✔ B08: RTDN on-hold must remove yearly access after Play recheck (0.6256ms)
+  ✔ B09: expired other purchase must not preserve a refunded lifetime entitlement (0.7879ms)
+  ✔ B10: an active lifetime purchase must preserve VIP when a yearly purchase expires (0.4504ms)
+  ✔ B11: a still-unexpired ID token must be rejected after account deletion (0.4198ms)
+  ✔ B12: a token voided between validation and commit must not be reactivated (0.3613ms)
+✔ Audit Probes — B01 to B12 Regressions (H01 to H05) (8.1861ms)
+▶ Audit Probes — C01 to C10 Regressions (V5 / J01, J02, J03)
+  ✔ C01: failed RTDN Play query must remain retryable, not COMPLETED (J01) (1.6213ms)
+  ✔ C02: a renewal hint with current ON_HOLD state must not grant VIP (J01) (0.5035ms)
+  ✔ C03: RTDN subscription for an unrelated product must not grant VIP (J01) (0.5689ms)
+  ✔ C04: PAUSED notification must apply current Play state (J01) (0.5218ms)
+  ✔ C05: delayed EXPIRED hint must not void a currently renewed ACTIVE subscription (J01) (0.4829ms)
+  ✔ C06: legacy yearly entitlement without expiry must not be treated as lifetime (J02) (0.2782ms)
+  ✔ C07: delete account while Play verify is in flight must prevent a new purchase commit (J03) (0.4749ms)
+  ✔ C08: purchase commit followed by entitlement-write failure must recover on retry (J02) (0.48ms)
+  ✔ C09: RTDN binding mismatch must not update another user entitlement (J01) (0.4582ms)
+  ✔ C10: renewal must not resurrect a purchase retained after account deletion (J01) (0.3855ms)
+✔ Audit Probes — C01 to C10 Regressions (V5 / J01, J02, J03) (6.2526ms)
+ℹ Error: Test "C08: purchase commit followed by entitlement-write failure must recover on retry (J02)" at test.js:1061:5 generated asynchronous activity after the test ended. This activity created the error "Error: injected entitlement write failure" and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ tests 42
+ℹ suites 9
+ℹ pass 42
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 145.0412

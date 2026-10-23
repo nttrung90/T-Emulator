@@ -1,0 +1,94 @@
+[RTDN] Error processing notification: Error: Injected Play outage
+    at Object.get (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:17:70)
+    at Layer.handle (F:\AI\T-Emulator\AndroidApp\backend\app.js:865:87)
+    at async call (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-fixture.cjs:15:5)
+    at async TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:19:17)
+    at async Test.run (node:internal/test_runner/test:1208:7)
+    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:385:3)
+C01 { status: 500, data: 'Internal Error' } { status: 200, data: 'OK' } {
+  status: 200,
+  data: {
+    isVip: true,
+    productId: 'vip_yearly',
+    isLifetime: false,
+    verifiedAt: null,
+    source: 'google_play',
+    expiryTimeMillis: 1791778063156
+  }
+}
+C02 { status: 200, data: { isVip: false } }
+C03 { status: 200, data: { isVip: false } }
+C04 { status: 200, data: { isVip: false } }
+C05 {
+  status: 200,
+  data: {
+    isVip: true,
+    productId: 'vip_yearly',
+    isLifetime: false,
+    verifiedAt: null,
+    source: 'google_play',
+    expiryTimeMillis: 1791778063163
+  }
+}
+C06 { status: 200, data: { isVip: false } }
+C07 {
+  status: 403,
+  data: { error: 'Account has been deleted', entitled: false }
+} undefined
+C08 { status: 500, data: { error: 'Purchase verification failed' } } {
+  status: 200,
+  data: {
+    entitled: true,
+    status: 'ALREADY_VERIFIED',
+    productId: 'vip_lifetime',
+    isLifetime: true,
+    expiryTimeMillis: null
+  }
+}
+C09 { status: 200, data: { isVip: false } }
+C11 {
+  status: 403,
+  data: { error: 'Account has been deleted', entitled: false }
+} undefined
+[RTDN] Error processing notification: Error: injected processed event write failure
+    at Object.set (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-fixture.cjs:34:128)
+    at Layer.handle (F:\AI\T-Emulator\AndroidApp\backend\app.js:977:98)
+    at async call (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-fixture.cjs:15:5)
+    at async TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:102:18)
+    at async Test.run (node:internal/test_runner/test:1208:7)
+    at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+[RTDN] Error processing notification: Error: Play subscription verification API unavailable for RTDN notification
+    at Layer.handle (F:\AI\T-Emulator\AndroidApp\backend\app.js:959:31)
+    at async call (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-fixture.cjs:15:5)
+    at async TestContext.<anonymous> (F:\AI\T-Emulator\AndroidApp\docs\audit-vip-2026-10-11-v5\backend-regressions.cjs:113:18)
+    at async Test.run (node:internal/test_runner/test:1208:7)
+    at async Test.processPendingSubtests (node:internal/test_runner/test:831:7)
+✔ C01: failed RTDN Play query must remain retryable, not COMPLETED (7.716ms)
+✔ C02: a renewal hint with current ON_HOLD state must not grant VIP (1.0647ms)
+✔ C03: RTDN subscription for an unrelated product must not grant VIP (0.8984ms)
+✔ C04: PAUSED notification must apply current Play state (0.9885ms)
+✔ C05: delayed EXPIRED hint must not void a currently renewed ACTIVE subscription (0.8715ms)
+✔ C06: legacy yearly entitlement without expiry must not be treated as lifetime (0.4652ms)
+✔ C07: delete account while Play verify is in flight must prevent a new purchase commit (1.3498ms)
+✔ C08: purchase commit followed by entitlement-write failure must recover on retry (0.9096ms)
+✔ C09: RTDN binding mismatch must not update another user entitlement (0.7127ms)
+✔ C10: renewal must not resurrect a purchase retained after account deletion (1.4474ms)
+✔ C11: deletion must block a new verify before destructive cleanup begins (0.6241ms)
+✔ C12: failed processed-event persistence must return retryable failure (0.6326ms)
+✔ C13: deletion tombstone must deny even a previously cached active entitlement (0.3445ms)
+✔ C14: missing Play subscription verifier must not consume renewal notification (0.476ms)
+✔ C15: production OIDC must fail closed without expected push service account identity (1.3298ms)
+✔ C16: duplicate verify must deny a tombstoned account before cleanup finishes (0.5018ms)
+✔ C17: deletion begun during recompute must prevent recreation of an entitlement document (0.338ms)
+✔ C18: deletion at entitlement commit boundary must conflict atomically rather than recreate VIP (0.3363ms)
+✔ C19: yearly entitlement response must expose subscription metadata for bounded client cache (0.2633ms)
+✔ C20: recomputed lifetime response must expose explicit lifetime metadata (0.4022ms)
+✔ C21: initial and duplicate yearly verification must supply authoritative cache metadata (0.5609ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 28.0458

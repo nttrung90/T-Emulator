@@ -1,0 +1,6 @@
+/tooling/
+/avds/
+/device-test/out/
+/dex-audit/*/*.dex
+/dex-audit/*/*.dex.txt
+/dex-audit/*/mapping.txt
